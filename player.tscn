@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ux3n5puh5ctw"]
+[gd_scene load_steps=30 format=3 uid="uid://ux3n5puh5ctw"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_sijb2"]
 [ext_resource type="Texture2D" uid="uid://wmpagpi76hg3" path="res://Sprite-0001.png" id="2_ejoa0"]
@@ -101,12 +101,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g1xox"]
-radius = 2.21549
-height = 8.86197
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dubue"]
-radius = 2.21549
+radius = 4.43098
 height = 13.293
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4wpn"]
@@ -216,7 +212,7 @@ collision_layer = 2
 script = ExtResource("1_sijb2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(3.8147e-06, 1.10775)
+position = Vector2(-4.54747e-13, -2.21549)
 sprite_frames = SubResource("SpriteFrames_732bp")
 animation = &"fall"
 autoplay = "idle"
@@ -224,10 +220,6 @@ autoplay = "idle"
 [node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D"]
 position = Vector2(-0.110775, 0)
 target_position = Vector2(6.64648, 0)
-
-[node name="feet" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
-shape = SubResource("CapsuleShape2D_g1xox")
 
 [node name="head" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
