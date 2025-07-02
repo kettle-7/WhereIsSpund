@@ -202,7 +202,6 @@ func _physics_process(delta):
 
 
 	if not Input.is_action_pressed("left") and not Input.is_action_pressed("right") or not is_on_floor():
-		particles.emitting = false
 	
 	
 	
@@ -242,41 +241,11 @@ func _physics_process(delta):
 	else:
 		animatedsprite.play("idle")
 	
-	if is_on_ceiling() and crouch == false:
-		crouch = true
 	
 	
 	
 	
-	if bubbleon == 1:
-		$bubble.play("expand")
-		
-	else:
-		$bubble.play("pop")
 	
-	if bubbleon == 1:
-		if Input.is_action_pressed("crouch") == false:
-			velocity.y = -40
-			if Input.is_action_pressed("jump"):
-				bubbleon = 0
-				jumphold = 1
-		else:
-			velocity.y = 40
-	
-	
-	
-	if grabbed == 1 and Input.is_action_pressed("grab"):
-		global_position = global_position.lerp(grabpos, delta * 10)
-		velocity.x = 0
-		velocity.y = 0
-	if grabbedid != null:
-		if str(grabbedid.get_name()) == "grabbable2" and Input.is_action_just_released("grab") and grabbed == 1:
-			if grabbedid.node_2d.path_follow_2d.progress_ratio < 0.5:
-				velocity.y = -400
-			else:
-				velocity.y = -200
-		elif grabbed == 1 and Input.is_action_just_released("grab"):
-			velocity.y = -240
 	
 	
 	move_and_slide()
@@ -294,8 +263,7 @@ func detectfall():
 		justonground = false
 
 
-func _on_poparea_body_entered(_body):
-		bubbleon = 0
+
 
 
 
@@ -305,12 +273,7 @@ func _on_walljump_timer_timeout():
 
 
 func _on_pa_area_shape_exited(_area_rid, area, _area_shape_index, _local_shape_index):
-	if str(area.get_name()) == "grabbable1" or str(area.get_name()) == "grabbable2":
-		grabbed = 0
-	
-	if str(area.get_name()) == "waterarea":
-		inwater = 0
-		velocity.y = 0
+	pass
 
 
 func _on_cyote_jump_timer_timeout() -> void:
