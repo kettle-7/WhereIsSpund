@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6imfa0ogkvlk"]
 
-[ext_resource type="Script" path="res://bullet.gd" id="1_ut4mj"]
+[ext_resource type="Script" uid="uid://2ha8t51ymhj5" path="res://bullet.gd" id="1_ut4mj"]
 [ext_resource type="Texture2D" uid="uid://b3gp87ii8ahy" path="res://bullet.png" id="2_io05g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1y8pv"]
@@ -37,10 +37,12 @@ sprite_frames = SubResource("SpriteFrames_y2ooy")
 autoplay = "default"
 frame_progress = 0.78727
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Bulletarea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bulletarea"]
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_t5n2h")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="area_shape_entered" from="Bulletarea" to="." method="_on_bulletarea_area_shape_entered"]
+[connection signal="body_entered" from="Bulletarea" to="." method="_on_bulletarea_body_entered"]
+[connection signal="body_entered" from="Bulletarea" to="." method="_on_area_2d_body_entered"]

@@ -22,6 +22,7 @@ var was_on_floor = false
 var footstep = false
 var stepped = false
 var justonground = false
+var canshoot = true
 @onready var ray_cast_2d = $AnimatedSprite2D/RayCast2D
 
 @onready var walljump_timer = $"walljump timer"
@@ -39,6 +40,7 @@ const BULLET = preload("res://bullet.tscn")
 
 
 @onready var cyote_jump_timer: Timer = $CyoteJumpTimer
+@onready var shooting_cooldown: Timer = $"shooting cooldown"
 
 
 
@@ -210,11 +212,14 @@ func _physics_process(delta):
 	
 	
 	#bullets
-	if Input.is_action_just_pressed("z"):
+	if Input.is_action_just_pressed("z") and canshoot:
 		var instance = BULLET.instantiate()
-		
+		shooting_cooldown.start()
 		instance.global_position = global_position
 		instance.direction = !animatedsprite.flip_h
+		
+		canshoot = false
+		shooting_cooldown.start()
 		
 		add_sibling(instance)
 	
@@ -244,3 +249,7 @@ func _on_pa_area_shape_exited(_area_rid, area, _area_shape_index, _local_shape_i
 
 func _on_cyote_jump_timer_timeout() -> void:
 	was_on_floor = false
+
+
+func _on_shooting_cooldown_timeout() -> void:
+	canshoot = true

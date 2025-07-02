@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ux3n5puh5ctw"]
+[gd_scene load_steps=30 format=3 uid="uid://bctqvjmmj6v43"]
 
 [ext_resource type="Script" uid="uid://c54nr6x1ffp7d" path="res://player.gd" id="1_sijb2"]
 [ext_resource type="Texture2D" uid="uid://wmpagpi76hg3" path="res://Sprite-0001.png" id="2_ejoa0"]
@@ -271,9 +271,12 @@ offset_bottom = -8.37041
 [node name="CyoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.1
 
+[node name="shooting cooldown" type="Timer" parent="."]
+
 [connection signal="area_shape_entered" from="pa" to="." method="_on_pa_area_shape_entered"]
 [connection signal="area_shape_exited" from="pa" to="." method="_on_pa_area_shape_exited"]
 [connection signal="body_entered" from="bubble/poparea" to="." method="_on_poparea_body_entered"]
 [connection signal="area_shape_entered" from="death hitbox" to="." method="_on_death_hitbox_area_shape_entered"]
 [connection signal="timeout" from="walljump timer" to="." method="_on_walljump_timer_timeout"]
 [connection signal="timeout" from="CyoteJumpTimer" to="." method="_on_cyote_jump_timer_timeout"]
+[connection signal="timeout" from="shooting cooldown" to="." method="_on_shooting_cooldown_timeout"]

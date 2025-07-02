@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://yguq3apeqsn4"]
+[gd_scene load_steps=6 format=4 uid="uid://yguq3apeqsn4"]
 
 [ext_resource type="PackedScene" uid="uid://bctqvjmmj6v43" path="res://player.tscn" id="1_c37tn"]
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://tileset01.png" id="1_yg34a"]
+[ext_resource type="PackedScene" uid="uid://dlgipsfo5bfks" path="res://enemy_01.tscn" id="3_h2yge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0vi3r"]
 texture = ExtResource("1_yg34a")
@@ -91,3 +92,8 @@ tile_set = SubResource("TileSet_howso")
 position = Vector2(98, 70)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="Enemy01" parent="enemies" instance=ExtResource("3_h2yge")]
+position = Vector2(752, 141)
