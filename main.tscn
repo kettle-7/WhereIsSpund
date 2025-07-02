@@ -92,8 +92,18 @@ tile_set = SubResource("TileSet_howso")
 position = Vector2(98, 70)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
 
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="Enemy01" parent="enemies" instance=ExtResource("3_h2yge")]
 position = Vector2(752, 141)
+
+[node name="Enemy02" parent="enemies" instance=ExtResource("3_h2yge")]
+position = Vector2(570, 128)
+
+[node name="Enemy03" parent="enemies" instance=ExtResource("3_h2yge")]
+position = Vector2(863, -92)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

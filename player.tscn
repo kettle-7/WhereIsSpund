@@ -208,7 +208,6 @@ height = 13.293
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 scale = Vector2(5, 5)
-collision_layer = 2
 script = ExtResource("1_sijb2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -272,6 +271,7 @@ offset_bottom = -8.37041
 wait_time = 0.1
 
 [node name="shooting cooldown" type="Timer" parent="."]
+wait_time = 0.4
 
 [connection signal="area_shape_entered" from="pa" to="." method="_on_pa_area_shape_entered"]
 [connection signal="area_shape_exited" from="pa" to="." method="_on_pa_area_shape_exited"]
