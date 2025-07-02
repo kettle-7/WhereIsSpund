@@ -38,6 +38,7 @@ autoplay = "default"
 frame_progress = 0.78727
 
 [node name="Bulletarea" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bulletarea"]
 position = Vector2(1, 0)

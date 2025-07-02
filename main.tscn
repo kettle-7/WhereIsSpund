@@ -1,3 +1,4 @@
+[gd_scene load_steps=7 format=4 uid="uid://yguq3apeqsn4"]
 [gd_scene load_steps=9 format=4 uid="uid://yguq3apeqsn4"]
 
 [ext_resource type="PackedScene" uid="uid://ux3n5puh5ctw" path="res://player.tscn" id="1_c37tn"]
@@ -6,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dt7hieo46wdax" path="res://pausepressed.png" id="4_tplmv"]
 [ext_resource type="Texture2D" uid="uid://btdayx5qat3lk" path="res://pausehover.png" id="5_p7mg2"]
 [ext_resource type="Script" path="res://pause_button.gd" id="6_nwqmp"]
+[ext_resource type="PackedScene" uid="uid://dlgipsfo5bfks" path="res://enemy_01.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://x11an1a3ekf2" path="res://enemy_02.tscn" id="4_1bvp3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0vi3r"]
 texture = ExtResource("1_yg34a")
@@ -109,3 +112,14 @@ texture_normal = ExtResource("3_vpjef")
 texture_pressed = ExtResource("4_tplmv")
 texture_hover = ExtResource("5_p7mg2")
 script = ExtResource("6_nwqmp")
+
+[node name="Enemy02" parent="enemies" instance=ExtResource("3_h2yge")]
+position = Vector2(570, 128)
+
+[node name="Enemy03" parent="enemies" instance=ExtResource("3_h2yge")]
+position = Vector2(863, -92)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Enemy02" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(-226, 239)
