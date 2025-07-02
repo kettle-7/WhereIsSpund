@@ -106,18 +106,6 @@ position = Vector2(98, 70)
 
 [node name="StaticUI" type="CanvasLayer" parent="."]
 
-[node name="PauseButton" type="TextureButton" parent="StaticUI"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
-grow_horizontal = 0
-texture_normal = ExtResource("3_vpjef")
-texture_pressed = ExtResource("4_tplmv")
-texture_hover = ExtResource("5_p7mg2")
-script = ExtResource("6_nwqmp")
-
 [node name="TextureProgressBar" type="TextureProgressBar" parent="StaticUI"]
 offset_left = 15.0
 offset_top = 9.99997
@@ -129,6 +117,18 @@ texture_under = ExtResource("7_qdu7q")
 texture_over = ExtResource("8_grxls")
 texture_progress = ExtResource("9_hfobw")
 script = ExtResource("10_5we2d")
+
+[node name="PauseButton" type="TextureButton" parent="StaticUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_vpjef")
+texture_pressed = ExtResource("4_tplmv")
+texture_hover = ExtResource("5_p7mg2")
+script = ExtResource("6_nwqmp")
 
 [node name="enemies" type="Node2D" parent="."]
 
