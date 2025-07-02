@@ -26,11 +26,10 @@ var justonground = false
 
 @onready var walljump_timer = $"walljump timer"
 
-@onready var particles = $"player leaf particles"
 
 @onready var animatedsprite = $AnimatedSprite2D
 
-@onready var collision_shape_2d_2 = $feet
+
 
 @onready var collision_shape_2d_head = $head
 
@@ -38,11 +37,8 @@ var justonground = false
 
 @onready var debuglabel = $debuglabel
 
-@onready var foreground: Node = $"../.."
 
 @onready var cyote_jump_timer: Timer = $CyoteJumpTimer
-@onready var footstep_1: AudioStreamPlayer = $footstep1
-@onready var footstep_2: AudioStreamPlayer = $footstep2
 
 
 
@@ -122,23 +118,10 @@ func _physics_process(delta):
 			velocity.y += gravity * delta * 1.2
 	
 	
-	#footstepsounds
-	if animatedsprite.animation == "run" and animatedsprite.frame == 0 and not stepped:
-		stepped = true
-		footstep = !footstep
-		if footstep:
-			footstep_1.pitch_scale = randf_range(0.7,1.3)
-			footstep_2.stop()
-			footstep_1.play()
-			
-		else:
-			footstep_1.pitch_scale = randf_range(0.7,1.3)
-			footstep_1.stop()
-			footstep_2.play()
 		
 	
 	
-	detectfall()
+	
 	
 	
 	if animatedsprite.frame != 0:
@@ -154,12 +137,12 @@ func _physics_process(delta):
 		jumphold = 0
 	
 	
-	if Input.is_action_pressed("jump") and crouch == false and canjump == true and playercanmove == true and not inwater:
+	if Input.is_action_pressed("up") and crouch == false and canjump == true and playercanmove == true and not inwater:
 		if jumphold < 4 and velocity.y < 20 or jumphold < 4 and was_on_floor and not is_on_floor():
 			velocity.y += JUMP_VELOCITY
 			jumphold += 1
 			if jumphold == 4:
-				Input.action_release ("jump")
+				Input.action_release ("up")
 
 #walljump
 	
@@ -167,7 +150,7 @@ func _physics_process(delta):
 		wallsliding = true
 	else:
 		wallsliding = false
-	if Input.is_action_pressed("jump") and playercanmove == true and wallsliding:
+	if Input.is_action_pressed("up") and playercanmove == true and wallsliding:
 		walljumptimer = direction * -1
 		walljump_timer.start()
 		
@@ -188,16 +171,8 @@ func _physics_process(delta):
 	# acceleration
 	if crouch == false or not is_on_floor():
 		if Input.is_action_pressed("left") and playercanmove == true and walljumptimer != 1:
-				if velocity.x < 1 and not Input.is_action_pressed("right"):
-					particles.emitting = true
-				else:
-					particles.emitting = false
 				acceleration += -SPEED
 		if Input.is_action_pressed("right") and playercanmove == true and walljumptimer != -1:
-				if velocity.x > 1 and not Input.is_action_pressed("left"):
-					particles.emitting = true
-				else:
-					particles.emitting = false
 				acceleration += SPEED
 
 
@@ -216,15 +191,7 @@ func _physics_process(delta):
 
 
 #crouch
-	if Input.is_action_pressed("crouch"):
-		crouch = true
-	else:
-		crouch = false
-	
-	if crouch == true:
-		collision_shape_2d_head.disabled = true
-	else:
-		collision_shape_2d_head.disabled = false
+
 	
 # handle animations
 	if is_on_wall_only() and velocity.y > 0 and ray_cast_2d.is_colliding():
@@ -252,15 +219,6 @@ func _physics_process(delta):
 
 
 
-func detectfall():
-	
-	if is_on_floor():
-		if not justonground:
-			footstep_1.play()
-			footstep_2.play()
-			justonground = true
-	else:
-		justonground = false
 
 
 
