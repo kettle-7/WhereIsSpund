@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 45
-const JUMP_VELOCITY = -150.0
+var JUMP_VELOCITY = -150.0
 var jumphold = 0
 var dir = 1
 var acceleration = 0
@@ -38,6 +38,7 @@ const BULLET = preload("res://bullet.tscn")
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready() -> void:
+	
 		global_position.x = GAME.spawnx
 		global_position.y = GAME.spawny
 		velocity.x = 0
@@ -67,7 +68,10 @@ func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_
 		GAME.playerhealth -= randi_range(15,25)
 
 func _physics_process(delta):
-	# Add the gravity and wall jump
+	if GAME.jumpupgrade:
+		JUMP_VELOCITY = -160
+	else:
+		JUMP_VELOCITY = -125
 	
 	if inwater:
 		velocity.y -= 0.02 * gravity

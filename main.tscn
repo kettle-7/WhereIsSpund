@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://yguq3apeqsn4"]
+[gd_scene load_steps=17 format=4 uid="uid://yguq3apeqsn4"]
 
 [ext_resource type="PackedScene" uid="uid://ux3n5puh5ctw" path="res://player.tscn" id="1_c37tn"]
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://tileset01.png" id="1_yg34a"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dl4jtevl4gd7r" path="res://healthbar.png" id="9_hfobw"]
 [ext_resource type="Script" path="res://healthbar.gd" id="10_5we2d"]
 [ext_resource type="PackedScene" uid="uid://cec1mew7r2v8c" path="res://checkpoint.tscn" id="13_kk4v5"]
+[ext_resource type="PackedScene" uid="uid://cihy1ir3tk687" path="res://higher_jump_upgrade.tscn" id="14_c4adx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0vi3r"]
 texture = ExtResource("1_yg34a")
@@ -142,3 +143,6 @@ position = Vector2(-226, 239)
 
 [node name="Checkpoint" parent="." instance=ExtResource("13_kk4v5")]
 position = Vector2(1144, -881)
+
+[node name="Higher Jump upgrade" parent="." instance=ExtResource("14_c4adx")]
+position = Vector2(953, 92)
