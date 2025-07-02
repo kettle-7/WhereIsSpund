@@ -1,6 +1,9 @@
 extends Node2D
 
 @onready var camera: Camera2D = $MainCamera;
+@onready var stageTimer: Timer = $StageTimer;
+@onready var evilDude: Sprite2D = $EvilDude;
+@onready var townChunk: Sprite2D = $Background1/TownChunk;
 
 var stage = 0;
 
@@ -11,5 +14,17 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	camera.set_zoom(camera.get_zoom() * Vector2(1.005, 1.005))
+	if (stage == 0):
+		camera.set_zoom(camera.get_zoom() * Vector2(1.005, 1.005))
+	elif (stage == 2):
+		camera.set_zoom(camera.get_zoom() / Vector2(1.005, 1.005))
+	elif (stage == 3):
+		townChunk.move_local_x()
 	pass
+
+
+func _on_stage_timer_timeout() -> void:
+	stage += 1;
+	if (stage == 4):
+		get_tree().change_scene_to_file("res://main.tscn")
+	pass # Replace with function body.
