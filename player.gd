@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var spawnx = -1206
-var spawny = -500
+var spawnx = 98
+var spawny = 70
 const SPEED = 45
 const JUMP_VELOCITY = -150.0
 var jumphold = 0
@@ -49,7 +49,7 @@ func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_
 		spawnx = area.node_2d.global_position.x
 		spawny = area.node_2d.global_position.y - 5
 	# handle spike collisions
-	if str(area.get_name()) == "spikes":
+	if str(area.get_name()) == "spikes" or GAME.playerhealth < 1:
 		global_position.x = spawnx
 		global_position.y = spawny
 		velocity.x = 0
@@ -61,7 +61,7 @@ func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_
 		
 	
 	if str(area.get_name()) == "hurtbox":
-		GAME.playerhealth -= 10
+		GAME.playerhealth -= randi_range(15,25)
 
 func _physics_process(delta):
 	# Add the gravity and wall jump
