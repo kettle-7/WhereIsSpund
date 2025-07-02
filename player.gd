@@ -73,9 +73,17 @@ func _physics_process(delta):
 	else:
 		JUMP_VELOCITY = -125
 	
-	if inwater:
-		velocity.y -= 0.02 * gravity
-		velocity.y *= 0.99
+	var candash = true
+	if is_on_floor():
+		candash = true
+	
+	if Input.is_action_just_pressed("dash") and candash:
+		candash = false
+		if Input.is_action_pressed("left"):
+			acceleration += -SPEED * 15
+		if Input.is_action_pressed("right"):
+			acceleration += SPEED * 15
+	
 	if grabbedid != null:
 		grabpos = grabbedid.global_position
 	
