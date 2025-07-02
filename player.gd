@@ -3,7 +3,7 @@ extends CharacterBody2D
 var spawnx = -1206
 var spawny = -500
 const SPEED = 45
-const JUMP_VELOCITY = -170.0
+const JUMP_VELOCITY = -150.0
 var jumphold = 0
 var dir = 1
 var acceleration = 0
@@ -29,7 +29,7 @@ var justonground = false
 
 @onready var animatedsprite = $AnimatedSprite2D
 
-
+const BULLET = preload("res://bullet.tscn")
 
 @onready var collision_shape_2d_head = $head
 
@@ -115,7 +115,7 @@ func _physics_process(delta):
 		elif velocity.y < 0:
 			velocity.y += gravity * delta
 		else:
-			velocity.y += gravity * delta * 1.2
+			velocity.y += gravity * delta * 1.8
 	
 	
 		
@@ -208,6 +208,15 @@ func _physics_process(delta):
 		animatedsprite.play("idle")
 	
 	
+	
+	#bullets
+	if Input.is_action_just_pressed("z"):
+		var instance = BULLET.instantiate()
+		
+		instance.global_position = global_position
+		instance.direction = !animatedsprite.flip_h
+		
+		add_sibling(instance)
 	
 	
 	
