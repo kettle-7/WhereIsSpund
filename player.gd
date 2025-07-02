@@ -21,7 +21,7 @@ var footstep = false
 var stepped = false
 var justonground = false
 var canshoot = true
-
+var candash = false
 @onready var ray_cast_2d = $AnimatedSprite2D/RayCast2D
 @onready var walljump_timer = $"walljump timer"
 @onready var animatedsprite = $AnimatedSprite2D
@@ -73,11 +73,11 @@ func _physics_process(delta):
 	else:
 		JUMP_VELOCITY = -125
 	
-	var candash = true
+	
 	if is_on_floor():
 		candash = true
 	
-	if Input.is_action_just_pressed("dash") and candash:
+	if Input.is_action_just_pressed("dash") and candash and GAME.dashupgrade:
 		candash = false
 		if Input.is_action_pressed("left"):
 			acceleration += -SPEED * 15
