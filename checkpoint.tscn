@@ -69,3 +69,4 @@ z_index = -1
 position = Vector2(1.49012e-08, -10.2)
 scale = Vector2(0.40625, 0.398438)
 sprite_frames = SubResource("SpriteFrames_p0n4k")
+autoplay = "default"
