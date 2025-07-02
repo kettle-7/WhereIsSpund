@@ -23,53 +23,34 @@ var footstep = false
 var stepped = false
 var justonground = false
 var canshoot = true
+
 @onready var ray_cast_2d = $AnimatedSprite2D/RayCast2D
-
 @onready var walljump_timer = $"walljump timer"
-
-
 @onready var animatedsprite = $AnimatedSprite2D
 
 const BULLET = preload("res://bullet.tscn")
 
 @onready var collision_shape_2d_head = $head
-
 @onready var bubble = $bubble
-
 @onready var debuglabel = $debuglabel
-
-
 @onready var cyote_jump_timer: Timer = $CyoteJumpTimer
 @onready var shooting_cooldown: Timer = $"shooting cooldown"
-
-
-
 
 @export var bubbleon = 0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-
-
 func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
 	if str(area.get_name()) == "bounce_hitbox" and velocity.y < 1:
 		$Timer.start()
 		Input.action_press ("jump", 1)
-		
-		
-		
 		velocity.y = -150
- # handle checkpoint collisions
+	# handle checkpoint collisions
 	if str(area.get_name()) == "checkpoint":
 		spawnx = area.node_2d.global_position.x
 		spawny = area.node_2d.global_position.y - 5
- # handle spike collisions
+	# handle spike collisions
 	if str(area.get_name()) == "spikes":
-		
-		
-		
-		
-		
 		global_position.x = spawnx
 		global_position.y = spawny
 		velocity.x = 0
@@ -83,7 +64,6 @@ func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_
 		inwater = true
 	
 
-		
 func _physics_process(delta):
 	# Add the gravity and wall jump
 	
@@ -98,7 +78,6 @@ func _physics_process(delta):
 		dir = Input.get_axis("left", "right")
 	
 	if direction:
-		
 		velocity.x = acceleration
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -119,13 +98,6 @@ func _physics_process(delta):
 		else:
 			velocity.y += gravity * delta * 1.8
 	
-	
-		
-	
-	
-	
-	
-	
 	if animatedsprite.frame != 0:
 		stepped = false
 	
@@ -134,10 +106,8 @@ func _physics_process(delta):
 		was_on_floor = true
 		cyote_jump_timer.start()
 	
-	
 	if is_on_floor():
 		jumphold = 0
-	
 	
 	if Input.is_action_pressed("up") and canjump == true and playercanmove == true and not inwater:
 		if jumphold < 4 and velocity.y < 20 or jumphold < 4 and was_on_floor and not is_on_floor():
@@ -146,8 +116,7 @@ func _physics_process(delta):
 			if jumphold == 4:
 				Input.action_release ("up")
 
-#walljump
-	
+	# walljump
 	if is_on_wall_only() and velocity.y > 0 and ray_cast_2d.is_colliding():
 		wallsliding = true
 	else:
@@ -155,7 +124,6 @@ func _physics_process(delta):
 	if Input.is_action_pressed("up") and playercanmove == true and wallsliding:
 		walljumptimer = direction * -1
 		walljump_timer.start()
-		
 		velocity.y = -200
 		if direction:
 			velocity.x = move_toward(velocity.x, 0, -SPEED - 150)
@@ -177,26 +145,15 @@ func _physics_process(delta):
 	if Input.is_action_pressed("right") and playercanmove == true and walljumptimer != -1:
 			acceleration += SPEED
 
-
-	
-	
-	
-	
 	playercanmove = true
-
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	debuglabel.text = str(stepped)
 
-
-
-#crouch
-
-	
-# handle animations
+	# crouch
+	# handle animations
 	if is_on_wall_only() and velocity.y > 0 and ray_cast_2d.is_colliding():
-		
 		animatedsprite.play("wallslide")
 	elif velocity.y > 1 and not is_on_ceiling():
 		animatedsprite.play("fall")
@@ -209,47 +166,26 @@ func _physics_process(delta):
 	else:
 		animatedsprite.play("idle")
 	
-	
-	
-	#bullets
+	# bullets
 	if Input.is_action_just_pressed("z") and canshoot:
 		var instance = BULLET.instantiate()
 		shooting_cooldown.start()
 		instance.global_position = global_position
 		instance.direction = !animatedsprite.flip_h
-		
 		canshoot = false
 		shooting_cooldown.start()
-		
 		add_sibling(instance)
 	
-	
-	
-	
-	
-	
 	move_and_slide()
-
-
-
-
-
-
-
-
 
 func _on_walljump_timer_timeout():
 	walljumptimer = 0
 	
-
-
 func _on_pa_area_shape_exited(_area_rid, area, _area_shape_index, _local_shape_index):
 	pass
 
-
 func _on_cyote_jump_timer_timeout() -> void:
 	was_on_floor = false
-
 
 func _on_shooting_cooldown_timeout() -> void:
 	canshoot = true

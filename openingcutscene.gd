@@ -1,4 +1,8 @@
-extends Control
+extends Node2D
+
+@onready var camera = $MainCamera;
+
+var stage = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -7,8 +11,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	camera.scale[0] += 1;
 	pass
-
-func _pressed():
-	# feed to other scene
-	get_tree().change_scene_to_file("res://openingcutscene.tscn")
