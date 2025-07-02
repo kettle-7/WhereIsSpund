@@ -37,4 +37,11 @@ process_callback = 0
 wait_time = 5.0
 autostart = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SkipButton" type="Button" parent="CanvasLayer"]
+offset_right = 8.0
+offset_bottom = 8.0
+
 [connection signal="timeout" from="StageTimer" to="." method="_on_stage_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/SkipButton" to="." method="_on_skip_button_pressed"]
