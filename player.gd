@@ -59,9 +59,9 @@ func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_
 		grabbed = 1
 		grabbedid = area
 		
-	if str(area.get_name()) == "waterarea":
-		inwater = true
 	
+	if str(area.get_name()) == "hurtbox":
+		GAME.playerhealth -= 10
 
 func _physics_process(delta):
 	# Add the gravity and wall jump
