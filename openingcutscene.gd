@@ -18,6 +18,8 @@ func _process(delta: float) -> void:
 		camera.set_zoom(camera.get_zoom() * Vector2(1.005, 1.005))
 	elif (stage == 2):
 		camera.set_zoom(camera.get_zoom() / Vector2(1.005, 1.005))
+	elif (stage == 3):
+		townChunk.move_local_x()
 	pass
 
 
