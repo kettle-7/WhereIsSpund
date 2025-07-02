@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://xttayh55e66p" path="res://enemy_1.png" id="2_t7m7e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hdsgg"]
-radius = 53.0015
+radius = 71.0011
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ayrpq"]
 atlas = ExtResource("2_t7m7e")
@@ -44,15 +44,15 @@ script = ExtResource("1_hdsgg")
 scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="View area"]
-position = Vector2(0, -11)
+position = Vector2(-1, -10.8)
 shape = SubResource("CircleShape2D_hdsgg")
-debug_color = Color(0.731785, 0.591757, 0, 0.42)
+debug_color = Color(0.733333, 0.592157, 0, 0.0901961)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_ig54x")
 autoplay = "default"
-frame_progress = 0.643571
+frame_progress = 0.431585
 
 [node name="hurtbox" type="Area2D" parent="."]
 

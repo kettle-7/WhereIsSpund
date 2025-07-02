@@ -35,9 +35,3 @@ func _on_timer_timeout() -> void:
 func _on_view_area_area_entered(area: Area2D) -> void:
 	if area.name == "pa":
 		can_see_player = true
-
-
-
-func _on_view_area_area_exited(area: Area2D) -> void:
-	if area.name == "pa":
-		can_see_player = false
