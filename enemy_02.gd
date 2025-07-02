@@ -11,7 +11,7 @@ const gravity = 5
 func _process(delta: float) -> void:
 	
 	move_local_x(dir)
-	if left.is_colliding():
+	if left.is_colliding() and left.get_collider().name != "head":
 		dir = 5
 		animated_sprite_2d.flip_h = false
 		
