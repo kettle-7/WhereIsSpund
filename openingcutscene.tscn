@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bs6sk2wpyl2h0"]
 
-[ext_resource type="Script" uid="uid://numoubmrkymf" path="res://openingcutscene.gd" id="1_drshc"]
+[ext_resource type="Script" path="res://openingcutscene.gd" id="1_drshc"]
 [ext_resource type="Texture2D" uid="uid://srieon7py2xq" path="res://opening_scene/steadyground.png" id="1_icemc"]
 [ext_resource type="Texture2D" uid="uid://pd684yj3h4cv" path="res://opening_scene/townchunk.png" id="2_20ayn"]
 [ext_resource type="Texture2D" uid="uid://vemmag0lnyxk" path="res://opening_scene/evildude.png" id="3_e4hus"]
@@ -9,16 +9,25 @@
 script = ExtResource("1_drshc")
 
 [node name="MainCamera" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 
-[node name="SteadyGround" type="Sprite2D" parent="."]
+[node name="Background1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SteadyGround" type="Sprite2D" parent="Background1"]
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_icemc")
 
-[node name="TownChunk" type="Sprite2D" parent="."]
-position = Vector2(-382, -137.5)
-scale = Vector2(1.01146, 1.00857)
+[node name="TownChunk" type="Sprite2D" parent="Background1"]
+position = Vector2(-230, -80.45)
+scale = Vector2(0.611688, 0.60621)
 texture = ExtResource("2_20ayn")
 
 [node name="EvilDude" type="Sprite2D" parent="."]
-position = Vector2(-1019, -38)
-scale = Vector2(2.53125, 2.40625)
+position = Vector2(-598, -16)
+scale = Vector2(0.855, 1)
 texture = ExtResource("3_e4hus")
