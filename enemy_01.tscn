@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://fknxxt5r468x"]
 
-[ext_resource type="Script" path="res://enemy_01.gd" id="1_hdsgg"]
+[ext_resource type="Script" uid="uid://04bbiq4wbqin" path="res://enemy_01.gd" id="1_hdsgg"]
 [ext_resource type="Texture2D" uid="uid://xttayh55e66p" path="res://enemy_1.png" id="2_t7m7e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hdsgg"]
