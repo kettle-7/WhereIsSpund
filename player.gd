@@ -29,7 +29,7 @@ var canshoot = true
 @onready var animatedsprite = $AnimatedSprite2D
 
 const BULLET = preload("res://bullet.tscn")
-@onready var collision_shape_2d_head = $head
+@onready var collision_shape_2d_head = $headd
 @onready var bubble = $bubble
 @onready var debuglabel = $debuglabel
 @onready var cyote_jump_timer: Timer = $CyoteJumpTimer

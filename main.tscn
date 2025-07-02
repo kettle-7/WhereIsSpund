@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://yguq3apeqsn4"]
+[gd_scene load_steps=14 format=4 uid="uid://yguq3apeqsn4"]
 
 [ext_resource type="PackedScene" uid="uid://ux3n5puh5ctw" path="res://player.tscn" id="1_c37tn"]
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://tileset01.png" id="1_yg34a"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://dt7hieo46wdax" path="res://pausepressed.png" id="4_tplmv"]
 [ext_resource type="Texture2D" uid="uid://btdayx5qat3lk" path="res://pausehover.png" id="5_p7mg2"]
 [ext_resource type="Script" path="res://pause_button.gd" id="6_nwqmp"]
+[ext_resource type="Texture2D" uid="uid://dqpyplaq4o3p8" path="res://healthbarbg.png" id="7_qdu7q"]
+[ext_resource type="Texture2D" uid="uid://s6ok8jsgnj0v" path="res://healthbarframe.png" id="8_grxls"]
+[ext_resource type="Texture2D" uid="uid://dl4jtevl4gd7r" path="res://healthbar.png" id="9_hfobw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0vi3r"]
 texture = ExtResource("1_yg34a")
@@ -112,7 +115,16 @@ texture_pressed = ExtResource("4_tplmv")
 texture_hover = ExtResource("5_p7mg2")
 script = ExtResource("6_nwqmp")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="StaticUI"]
+offset_left = -453.0
+offset_top = -223.0
+offset_right = -389.0
+offset_bottom = -183.0
+scale = Vector2(5, 5)
+value = 70.0
+texture_under = ExtResource("7_qdu7q")
+texture_over = ExtResource("8_grxls")
+texture_progress = ExtResource("9_hfobw")
 
 [node name="enemies" type="Node2D" parent="."]
 
