@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b125wiwn8732q"]
 
-[ext_resource type="Texture2D" uid="uid://blblcer6yqyn1" path="res://TitleBackground.png" id="1_mopsg"]
-[ext_resource type="Script" path="res://titlescreen.gd" id="2_4nmht"]
-[ext_resource type="Script" path="res://quit_button.gd" id="3_j3ba2"]
+[ext_resource type="Texture2D" uid="uid://blblcer6yqyn1" path="res://TitleBackground.png" id="1_27lav"]
+[ext_resource type="Script" path="res://title_screen/titlescreen.gd" id="2_0rhj2"]
+[ext_resource type="Script" path="res://quit_button.gd" id="3_25ark"]
 
 [sub_resource type="SystemFont" id="SystemFont_jhljc"]
 font_names = PackedStringArray("Comic Sans MS")
@@ -27,7 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_mopsg")
+texture = ExtResource("1_27lav")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -59,10 +59,10 @@ columns = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "play"
-script = ExtResource("2_4nmht")
+script = ExtResource("2_0rhj2")
 
 [node name="QuitButton" type="Button" parent="CenterContainer/GridContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "don't play"
-script = ExtResource("3_j3ba2")
+script = ExtResource("3_25ark")
