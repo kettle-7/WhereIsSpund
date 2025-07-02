@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://b125wiwn8732q"]
+
+[ext_resource type="Texture2D" uid="uid://blblcer6yqyn1" path="res://TitleBackground.png" id="1_mopsg"]
+[ext_resource type="Script" path="res://titlescreen.gd" id="2_4nmht"]
+
+[sub_resource type="SystemFont" id="SystemFont_jhljc"]
+font_names = PackedStringArray("Comic Sans MS")
+
+[sub_resource type="LabelSettings" id="LabelSettings_364g7"]
+font = SubResource("SystemFont_jhljc")
+font_size = 55
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mopsg")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+text = "FANK GUDNETHHHH YAR 'ERE
+"
+label_settings = SubResource("LabelSettings_364g7")
+
+[node name="Button" type="Button" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+text = "play"
+script = ExtResource("2_4nmht")
