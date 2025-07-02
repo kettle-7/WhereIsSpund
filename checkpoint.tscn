@@ -1,9 +1,59 @@
-[gd_scene load_steps=3 format=3 uid="uid://cec1mew7r2v8c"]
+[gd_scene load_steps=10 format=3 uid="uid://cec1mew7r2v8c"]
 
-[ext_resource type="Texture2D" uid="uid://dfsx3marvx3vq" path="res://icon.svg" id="1_olvg2"]
+[ext_resource type="Texture2D" uid="uid://dd7pq3vsrrwwc" path="res://pixilart-drawing (5).png" id="1_2brbk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vlktd"]
-radius = 24.0416
+radius = 9.27793
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk7vp"]
+atlas = ExtResource("1_2brbk")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27wr2"]
+atlas = ExtResource("1_2brbk")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ibr2"]
+atlas = ExtResource("1_2brbk")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty25p"]
+atlas = ExtResource("1_2brbk")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gmyy"]
+atlas = ExtResource("1_2brbk")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7r0wn"]
+atlas = ExtResource("1_2brbk")
+region = Rect2(250, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p0n4k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pk7vp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27wr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ibr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty25p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gmyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7r0wn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Checkpoint" type="Node2D"]
 scale = Vector2(5, 5)
@@ -11,11 +61,11 @@ scale = Vector2(5, 5)
 [node name="checkpoint" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="checkpoint"]
-position = Vector2(0, -25)
+position = Vector2(0, -9.4)
 shape = SubResource("CircleShape2D_vlktd")
 
-[node name="Icon" type="Sprite2D" parent="."]
+[node name="Icon" type="AnimatedSprite2D" parent="."]
 z_index = -1
-position = Vector2(0, -24.5)
+position = Vector2(1.49012e-08, -10.2)
 scale = Vector2(0.40625, 0.398438)
-texture = ExtResource("1_olvg2")
+sprite_frames = SubResource("SpriteFrames_p0n4k")
