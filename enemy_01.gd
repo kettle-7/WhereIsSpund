@@ -15,9 +15,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		queue_free()
 
 func _process(delta: float) -> void:
-	if can_see_player:
-		global_position = lerp(global_position,player.global_position,0.01)
 	
+	if can_see_player:
+		global_position = lerp(global_position, player.global_position,0.01)
+	print(can_see_player)
 	if player.global_position.x > global_position.x:
 		animated_sprite_2d.flip_h = false
 	else:
@@ -33,5 +34,6 @@ func _on_timer_timeout() -> void:
 
 
 func _on_view_area_area_entered(area: Area2D) -> void:
-	if area.name == "pa":
+	if area.name == "player_area":
 		can_see_player = true
+	
