@@ -7,13 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://b83e8a0mlrr8" path="res://enemy_02.tscn" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dt7hieo46wdax" path="res://ui/pausepressed.png" id="4_tplmv"]
 [ext_resource type="Texture2D" uid="uid://btdayx5qat3lk" path="res://ui/pausehover.png" id="5_p7mg2"]
-[ext_resource type="Script" path="res://ui/pause_button.gd" id="6_nwqmp"]
 [ext_resource type="Texture2D" uid="uid://dqpyplaq4o3p8" path="res://healthbarbg.png" id="7_qdu7q"]
 [ext_resource type="Texture2D" uid="uid://s6ok8jsgnj0v" path="res://healthbarframe.png" id="8_grxls"]
 [ext_resource type="Texture2D" uid="uid://dl4jtevl4gd7r" path="res://healthbar.png" id="9_hfobw"]
 [ext_resource type="Script" path="res://healthbar.gd" id="10_5we2d"]
 [ext_resource type="PackedScene" uid="uid://cec1mew7r2v8c" path="res://checkpoint.tscn" id="13_kk4v5"]
-[ext_resource type="PackedScene" path="res://higher_jump_upgrade.tscn" id="14_c4adx"]
+[ext_resource type="PackedScene" uid="uid://cihy1ir3tk687" path="res://higher_jump_upgrade.tscn" id="14_c4adx"]
+[ext_resource type="Texture2D" uid="uid://d4cwlb8q2a6b0" path="res://mainbackgroundgradient.png" id="14_c5ygi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0vi3r"]
 texture = ExtResource("1_yg34a")
@@ -106,6 +106,17 @@ position = Vector2(98, 70)
 
 [node name="StaticUI" type="CanvasLayer" parent="."]
 
+[node name="PauseButton" type="TextureButton" parent="StaticUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_vpjef")
+texture_pressed = ExtResource("4_tplmv")
+texture_hover = ExtResource("5_p7mg2")
+
 [node name="TextureProgressBar" type="TextureProgressBar" parent="StaticUI"]
 offset_left = 15.0
 offset_top = 9.99997
@@ -146,3 +157,9 @@ position = Vector2(1144, -881)
 
 [node name="Higher Jump upgrade" parent="." instance=ExtResource("14_c4adx")]
 position = Vector2(953, 92)
+
+[node name="Mainbackgroundgradient" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1004, -14379)
+scale = Vector2(5, 5)
+texture = ExtResource("14_c5ygi")
