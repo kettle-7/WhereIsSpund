@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cec1mew7r2v8c"]
+
+[ext_resource type="Texture2D" uid="uid://dfsx3marvx3vq" path="res://icon.svg" id="1_olvg2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vlktd"]
+radius = 24.0416
+
+[node name="Checkpoint" type="Node2D"]
+scale = Vector2(5, 5)
+
+[node name="checkpoint" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="checkpoint"]
+position = Vector2(0, -25)
+shape = SubResource("CircleShape2D_vlktd")
+
+[node name="Icon" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, -24.5)
+scale = Vector2(0.40625, 0.398438)
+texture = ExtResource("1_olvg2")
