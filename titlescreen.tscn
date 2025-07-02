@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b125wiwn8732q"]
+[gd_scene load_steps=6 format=3 uid="uid://b125wiwn8732q"]
 
 [ext_resource type="Texture2D" uid="uid://blblcer6yqyn1" path="res://TitleBackground.png" id="1_mopsg"]
-[ext_resource type="Script" uid="uid://84kjxjujtshg" path="res://titlescreen.gd" id="2_4nmht"]
+[ext_resource type="Script" path="res://titlescreen.gd" id="2_4nmht"]
+[ext_resource type="Script" path="res://quit_button.gd" id="3_j3ba2"]
 
 [sub_resource type="SystemFont" id="SystemFont_jhljc"]
 font_names = PackedStringArray("Comic Sans MS")
@@ -40,11 +41,27 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/GridContainer"]
 layout_mode = 2
-text = "FANK GUDNETHHHH YAR 'ERE
-"
+text = "GREEN FLOATING ISLANDS VILLAIN"
 label_settings = SubResource("LabelSettings_364g7")
 
-[node name="Button" type="Button" parent="CenterContainer/GridContainer"]
+[node name="Label2" type="Label" parent="CenterContainer/GridContainer"]
 layout_mode = 2
+text = "owh nyo he stowe de gween fwoating iswands"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2
+
+[node name="PlayButton" type="Button" parent="CenterContainer/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "play"
 script = ExtResource("2_4nmht")
+
+[node name="QuitButton" type="Button" parent="CenterContainer/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "don't play"
+script = ExtResource("3_j3ba2")
