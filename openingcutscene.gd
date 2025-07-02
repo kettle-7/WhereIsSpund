@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var camera: Camera2D = $MainCamera;
 @onready var stageTimer: Timer = $StageTimer;
+@onready var evilDude: Sprite2D = $EvilDude;
+@onready var townChunk: Sprite2D = $Background1/TownChunk;
 
 var stage = 0;
 
