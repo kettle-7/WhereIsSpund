@@ -1,13 +1,12 @@
-[gd_scene load_steps=17 format=4 uid="uid://yguq3apeqsn4"]
+[gd_scene load_steps=16 format=4 uid="uid://yguq3apeqsn4"]
 
 [ext_resource type="PackedScene" uid="uid://ux3n5puh5ctw" path="res://player.tscn" id="1_c37tn"]
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://tileset01.png" id="1_yg34a"]
 [ext_resource type="PackedScene" uid="uid://fknxxt5r468x" path="res://enemy_01.tscn" id="3_h2yge"]
-[ext_resource type="Texture2D" uid="uid://y6g7qt22rede" path="res://pause.png" id="3_vpjef"]
+[ext_resource type="Texture2D" uid="uid://y6g7qt22rede" path="res://ui/pause.png" id="3_vpjef"]
 [ext_resource type="PackedScene" uid="uid://b83e8a0mlrr8" path="res://enemy_02.tscn" id="4_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://dt7hieo46wdax" path="res://pausepressed.png" id="4_tplmv"]
-[ext_resource type="Texture2D" uid="uid://btdayx5qat3lk" path="res://pausehover.png" id="5_p7mg2"]
-[ext_resource type="Script" path="res://pause_button.gd" id="6_nwqmp"]
+[ext_resource type="Texture2D" uid="uid://dt7hieo46wdax" path="res://ui/pausepressed.png" id="4_tplmv"]
+[ext_resource type="Texture2D" uid="uid://btdayx5qat3lk" path="res://ui/pausehover.png" id="5_p7mg2"]
 [ext_resource type="Texture2D" uid="uid://dqpyplaq4o3p8" path="res://healthbarbg.png" id="7_qdu7q"]
 [ext_resource type="Texture2D" uid="uid://s6ok8jsgnj0v" path="res://healthbarframe.png" id="8_grxls"]
 [ext_resource type="Texture2D" uid="uid://dl4jtevl4gd7r" path="res://healthbar.png" id="9_hfobw"]
@@ -116,7 +115,6 @@ grow_horizontal = 0
 texture_normal = ExtResource("3_vpjef")
 texture_pressed = ExtResource("4_tplmv")
 texture_hover = ExtResource("5_p7mg2")
-script = ExtResource("6_nwqmp")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="StaticUI"]
 offset_left = 15.0
