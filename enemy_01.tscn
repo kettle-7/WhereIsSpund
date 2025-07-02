@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://fknxxt5r468x"]
 
-[ext_resource type="Script" uid="uid://04bbiq4wbqin" path="res://enemy_01.gd" id="1_hdsgg"]
-[ext_resource type="Texture2D" uid="uid://xttayh55e66p" path="res://enemy_1.png" id="2_t7m7e"]
+[ext_resource type="Script" path="res://enemy_01.gd" id="1_hdsgg"]
+[ext_resource type="Texture2D" path="res://enemy_1.png" id="2_t7m7e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hdsgg"]
 radius = 71.0011
@@ -41,6 +41,7 @@ collision_mask = 2
 script = ExtResource("1_hdsgg")
 
 [node name="View area" type="Area2D" parent="."]
+scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="View area"]
 position = Vector2(-1, -10.8)
@@ -51,7 +52,7 @@ debug_color = Color(0.733333, 0.592157, 0, 0.0901961)
 position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_ig54x")
 autoplay = "default"
-frame_progress = 0.324775
+frame_progress = 0.980541
 
 [node name="hurtbox" type="Area2D" parent="."]
 

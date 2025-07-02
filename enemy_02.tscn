@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b83e8a0mlrr8"]
 
 [ext_resource type="Script" path="res://enemy_02.gd" id="1_bjrl7"]
-[ext_resource type="Texture2D" uid="uid://coq7esnyyt48r" path="res://Enemy02.png" id="2_8mdog"]
+[ext_resource type="Texture2D" path="res://Enemy02.png" id="2_8mdog"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fgj43"]
 atlas = ExtResource("2_8mdog")
@@ -32,6 +32,7 @@ size = Vector2(20, 20.25)
 size = Vector2(24.6, 22.2)
 
 [node name="Enemy02" type="CharacterBody2D"]
+position = Vector2(-3, 0)
 scale = Vector2(5, 5)
 collision_layer = 2
 collision_mask = 2
@@ -60,6 +61,7 @@ target_position = Vector2(18, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
 position = Vector2(-0.2, -11)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bjrl7")
 debug_color = Color(1, 0, 0, 0.419608)
 
