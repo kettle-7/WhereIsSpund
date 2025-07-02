@@ -123,7 +123,7 @@ func _physics_process(delta):
 				Input.action_release ("up")
 
 	# walljump
-	if is_on_wall_only() and velocity.y > 0 and ray_cast_2d.is_colliding():
+	if is_on_wall_only() and velocity.y > 0 and ray_cast_2d.is_colliding() and GAME.walljumpupgrade:
 		wallsliding = true
 	else:
 		wallsliding = false
