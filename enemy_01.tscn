@@ -52,7 +52,7 @@ debug_color = Color(0.733333, 0.592157, 0, 0.0901961)
 position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_ig54x")
 autoplay = "default"
-frame_progress = 0.431585
+frame_progress = 0.324775
 
 [node name="hurtbox" type="Area2D" parent="."]
 
