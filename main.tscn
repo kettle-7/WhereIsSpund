@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dt7hieo46wdax" path="res://pausepressed.png" id="4_tplmv"]
 [ext_resource type="Texture2D" uid="uid://btdayx5qat3lk" path="res://pausehover.png" id="5_p7mg2"]
 [ext_resource type="Script" path="res://pause_button.gd" id="6_nwqmp"]
+[ext_resource type="PackedScene" uid="uid://fknxxt5r468x" path="res://enemy_01.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://b83e8a0mlrr8" path="res://enemy_02.tscn" id="4_1bvp3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0vi3r"]
 texture = ExtResource("1_yg34a")
@@ -124,3 +126,12 @@ position = Vector2(570, 128)
 
 [node name="enemies#Enemy03" parent="enemies" instance=ExtResource("3_h2yge")]
 position = Vector2(863, -92)
+
+[node name="Enemy01" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(633, -63)
+
+[node name="Enemy02" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(1198, -71)
+
+[node name="Enemy03" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(-206, 242)
