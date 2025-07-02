@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://ux3n5puh5ctw"]
+[gd_scene load_steps=34 format=3 uid="uid://ux3n5puh5ctw"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_sijb2"]
+[ext_resource type="Texture2D" uid="uid://dfsx3marvx3vq" path="res://icon.svg" id="2_khwur"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5wwfc"]
 region = Rect2(0, 30, 11, 15)
@@ -52,6 +53,9 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_khwur")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wwxpm")
 }, {
@@ -228,9 +232,10 @@ collision_layer = 2
 script = ExtResource("1_sijb2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0.110775, 0)
+position = Vector2(3.8147e-06, 1.10775)
+scale = Vector2(0.0346171, 0.0865427)
 sprite_frames = SubResource("SpriteFrames_732bp")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D"]
@@ -292,12 +297,6 @@ offset_bottom = -8.37041
 
 [node name="CyoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.1
-
-[node name="footstep1" type="AudioStreamPlayer" parent="."]
-volume_db = -15.901
-
-[node name="footstep2" type="AudioStreamPlayer" parent="."]
-volume_db = -15.0
 
 [connection signal="area_shape_entered" from="pa" to="." method="_on_pa_area_shape_entered"]
 [connection signal="area_shape_exited" from="pa" to="." method="_on_pa_area_shape_exited"]
