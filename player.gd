@@ -235,8 +235,6 @@ func _physics_process(delta):
 		animatedsprite.play("fall")
 	elif velocity.y < -1 and not is_on_ceiling():
 		animatedsprite.play("jump")
-	elif crouch == true and playercanmove:
-		animatedsprite.play("intocrouch")
 	elif direction == 0:
 		animatedsprite.play("idle")
 	elif playercanmove:
