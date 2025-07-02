@@ -31,3 +31,10 @@ texture = ExtResource("2_20ayn")
 position = Vector2(-598, -16)
 scale = Vector2(0.855, 1)
 texture = ExtResource("3_e4hus")
+
+[node name="StageTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="StageTimer" to="." method="_on_stage_timer_timeout"]
