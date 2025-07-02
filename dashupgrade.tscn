@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbkrcilbnkshv"]
+
+[ext_resource type="Script" path="res://dashupgrade.gd" id="1_vyo86"]
+[ext_resource type="Texture2D" uid="uid://ditw7vwqxolyv" path="res://dashupgrade.png" id="2_7ii7a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fw7iu"]
+
+[node name="Dashupgrade" type="Node2D"]
+script = ExtResource("1_vyo86")
+
+[node name="JumpUpgrade" type="Sprite2D" parent="."]
+texture = ExtResource("2_7ii7a")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_fw7iu")

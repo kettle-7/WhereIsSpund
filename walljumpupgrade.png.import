@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4cwlb8q2a6b0"
-path="res://.godot/imported/mainbackgroundgradient.png-eccdb22c966b3773f7817794fff5874c.ctex"
+uid="uid://bq0kytdmyw1r0"
+path="res://.godot/imported/walljumpupgrade.png-27991b6d68d50fc47878ee7ef3ced8c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mainbackgroundgradient.png"
-dest_files=["res://.godot/imported/mainbackgroundgradient.png-eccdb22c966b3773f7817794fff5874c.ctex"]
+source_file="res://walljumpupgrade.png"
+dest_files=["res://.godot/imported/walljumpupgrade.png-27991b6d68d50fc47878ee7ef3ced8c4.ctex"]
 
 [params]
 
