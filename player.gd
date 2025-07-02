@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 var spawnx = -1206
 var spawny = -500
-const SPEED = 13
-const JUMP_VELOCITY = -70.0
+const SPEED = 45
+const JUMP_VELOCITY = -170.0
 var jumphold = 0
 var dir = 1
 var acceleration = 0
@@ -103,14 +103,14 @@ func _physics_process(delta):
 	
 	if direction > 0:
 		animatedsprite.flip_h = false
-		ray_cast_2d.target_position = Vector2(3,0)
+		ray_cast_2d.target_position = Vector2(7,0)
 	elif direction <0:
 		animatedsprite.flip_h = true
-		ray_cast_2d.target_position = Vector2(-3,0)
+		ray_cast_2d.target_position = Vector2(-7,0)
 		
 	if not is_on_floor():
 		if is_on_wall_only() and velocity.y > 0 and ray_cast_2d.is_colliding():
-			jumphold = 4
+			jumphold = 1
 			velocity.y = 50
 		elif velocity.y < 0:
 			velocity.y += gravity * delta
@@ -137,7 +137,7 @@ func _physics_process(delta):
 		jumphold = 0
 	
 	
-	if Input.is_action_pressed("up") and crouch == false and canjump == true and playercanmove == true and not inwater:
+	if Input.is_action_pressed("up") and canjump == true and playercanmove == true and not inwater:
 		if jumphold < 4 and velocity.y < 20 or jumphold < 4 and was_on_floor and not is_on_floor():
 			velocity.y += JUMP_VELOCITY
 			jumphold += 1
@@ -169,20 +169,19 @@ func _physics_process(delta):
 	else:
 		acceleration *= 0.91
 	# acceleration
-	if crouch == false or not is_on_floor():
-		if Input.is_action_pressed("left") and playercanmove == true and walljumptimer != 1:
-				acceleration += -SPEED
-		if Input.is_action_pressed("right") and playercanmove == true and walljumptimer != -1:
-				acceleration += SPEED
+
+	if Input.is_action_pressed("left") and playercanmove == true and walljumptimer != 1:
+			acceleration += -SPEED
+	if Input.is_action_pressed("right") and playercanmove == true and walljumptimer != -1:
+			acceleration += SPEED
 
 
-	if not Input.is_action_pressed("left") and not Input.is_action_pressed("right") or not is_on_floor():
 	
 	
 	
-		playercanmove = true
-	else:
-		playercanmove = false
+	
+	playercanmove = true
+
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
