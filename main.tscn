@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dl4jtevl4gd7r" path="res://healthbar.png" id="9_hfobw"]
 [ext_resource type="Script" path="res://healthbar.gd" id="10_5we2d"]
 [ext_resource type="PackedScene" uid="uid://cec1mew7r2v8c" path="res://checkpoint.tscn" id="13_kk4v5"]
+[ext_resource type="Script" path="res://world_bottom.gd" id="15_imf8e"]
 [ext_resource type="PackedScene" uid="uid://cihy1ir3tk687" path="res://higher_jump_upgrade.tscn" id="14_c4adx"]
 [ext_resource type="PackedScene" uid="uid://igjrlam0o3tq" path="res://walljumpupgrade.tscn" id="15_cvxv8"]
 [ext_resource type="PackedScene" uid="uid://dj0yfuchs0etl" path="res://dashupgrade.tscn" id="16_vdr1t"]
@@ -93,6 +94,8 @@ terrain_set_0/terrain_1/name = "Terrain 1"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_0vi3r")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s720b"]
+
 [node name="Main" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -149,6 +152,14 @@ position = Vector2(1144, -881)
 [node name="Higher Jump upgrade" parent="." instance=ExtResource("14_c4adx")]
 position = Vector2(953, 92)
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 1500)
+script = ExtResource("15_imf8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("WorldBoundaryShape2D_s720b")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
 [node name="Walljumpupgrade" parent="." instance=ExtResource("15_cvxv8")]
 position = Vector2(-250, -44)
 
