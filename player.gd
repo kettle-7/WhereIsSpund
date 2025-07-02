@@ -29,7 +29,6 @@ var canshoot = true
 @onready var animatedsprite = $AnimatedSprite2D
 
 const BULLET = preload("res://bullet.tscn")
-
 @onready var collision_shape_2d_head = $head
 @onready var bubble = $bubble
 @onready var debuglabel = $debuglabel
