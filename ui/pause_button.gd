@@ -11,4 +11,6 @@ func _process(delta: float) -> void:
 
 
 func _pressed() -> void:
-	get_tree().change_scene_to_file("res://title_screen/titlescreen.tscn");
+	var tree = get_tree();
+	print (tree);
+	tree.change_scene_to_file("res://title_screen/titlescreen.tscn");
