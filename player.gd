@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-var spawnx = 98
-var spawny = 70
 const SPEED = 45
 const JUMP_VELOCITY = -150.0
 var jumphold = 0
@@ -29,7 +27,7 @@ var canshoot = true
 @onready var animatedsprite = $AnimatedSprite2D
 
 const BULLET = preload("res://bullet.tscn")
-@onready var collision_shape_2d_head = $headd
+@onready var collision_shape_2d_head = $head
 @onready var bubble = $bubble
 @onready var debuglabel = $debuglabel
 @onready var cyote_jump_timer: Timer = $CyoteJumpTimer
@@ -39,6 +37,12 @@ const BULLET = preload("res://bullet.tscn")
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _ready() -> void:
+		global_position.x = GAME.spawnx
+		global_position.y = GAME.spawny
+		velocity.x = 0
+		velocity.y = 0
+
 func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
 	if str(area.get_name()) == "bounce_hitbox" and velocity.y < 1:
 		$Timer.start()
@@ -46,14 +50,13 @@ func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_
 		velocity.y = -150
 	# handle checkpoint collisions
 	if str(area.get_name()) == "checkpoint":
-		spawnx = area.node_2d.global_position.x
-		spawny = area.node_2d.global_position.y - 5
+		GAME.spawnx = area.global_position.x
+		GAME.spawny = area.global_position.y
 	# handle spike collisions
 	if str(area.get_name()) == "spikes" or GAME.playerhealth < 1:
-		global_position.x = spawnx
-		global_position.y = spawny
-		velocity.x = 0
-		velocity.y = 0
+		GAME.playerhealth = 100
+		get_tree().reload_current_scene()
+
 
 	if str(area.get_name()) == "grabbable1"   or str(area.get_name()) == "grabbable2":
 		grabbed = 1
