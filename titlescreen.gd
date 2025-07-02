@@ -13,5 +13,4 @@ func _process(delta: float) -> void:
 
 func _pressed():
 	# feed to other scene
-	get_tree().root.add_child(player_scene);
-	get_node("/root/TitleScreenRoot").free();
+	get_tree().change_scene_to_file("res://player.tscn")
