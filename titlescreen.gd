@@ -1,6 +1,6 @@
 extends Control
 
-var player_scene = preload("res://openingcutscene.tscn").instantiate()
+var player_scene = preload("res://player.tscn").instantiate()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,5 +14,4 @@ func _process(delta: float) -> void:
 func _pressed():
 	# feed to other scene
 	get_tree().root.add_child(player_scene);
-	get_node("/root/Control").free();
-	print("you do not have legs")
+	get_node("/root/TitleScreenRoot").free();

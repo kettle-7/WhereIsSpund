@@ -10,7 +10,7 @@ font_names = PackedStringArray("Comic Sans MS")
 font = SubResource("SystemFont_jhljc")
 font_size = 55
 
-[node name="Control" type="Control"]
+[node name="TitleScreenRoot" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
