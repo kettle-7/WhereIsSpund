@@ -59,7 +59,12 @@ func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_
 		GAME.spawny = area.global_position.y - 10
 	# handle spike collisions
 	if str(area.get_name()) == "spikes" or GAME.playerhealth < 10:
-		
+		if GAME.walljumpupgrade:
+			animatedsprite.play("death_backpack_boots")
+		elif GAME.jumpupgrade:
+			animatedsprite.play("death_boots")
+		else:
+			animatedsprite.play("death")
 		GAME.playerhealth = 100
 		get_tree().reload_current_scene()
 
@@ -78,6 +83,12 @@ func _physics_process(delta):
 	
 	
 	if GAME.playerhealth < 10:
+		if GAME.walljumpupgrade:
+			animatedsprite.play("death_backpack_boots")
+		elif GAME.jumpupgrade:
+			animatedsprite.play("death_boots")
+		else:
+			animatedsprite.play("death")
 		GAME.playerhealth = 100
 		get_tree().reload_current_scene()
 	
