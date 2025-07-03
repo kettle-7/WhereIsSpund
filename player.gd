@@ -179,44 +179,44 @@ func _physics_process(delta):
 	# handle animations
 	if is_on_wall_only() and velocity.y > 0 and ray_cast_2d.is_colliding():
 		if GAME.walljumpupgrade:
-			animatedsprite.play("wallslide_backpack")
-		elif GAME.jumpupgrade:
 			animatedsprite.play("wallslide_backpack_boots")
+		elif GAME.jumpupgrade:
+			animatedsprite.play("wallslide_boots")
 		else:
 			animatedsprite.play("wallslide")
 	elif velocity.y > 1 and not is_on_ceiling(): #fall
 		if GAME.walljumpupgrade:
-			animatedsprite.play("fall_backpack")
-		elif GAME.jumpupgrade:
 			animatedsprite.play("fall_backpack_boots")
+		elif GAME.jumpupgrade:
+			animatedsprite.play("fall_boots")
 		else:
 			animatedsprite.play("fall")
 	elif velocity.y < -1 and not is_on_ceiling(): #jump
 		if GAME.walljumpupgrade:
-			animatedsprite.play("jump_backpack")
-		elif GAME.jumpupgrade:
 			animatedsprite.play("jump_backpack_boots")
+		elif GAME.jumpupgrade:
+			animatedsprite.play("jump_boots")
 		else:
 			animatedsprite.play("jump")
 	elif direction == 0: #idle
 		if GAME.walljumpupgrade:
-			animatedsprite.play("idle_backpack")
-		elif GAME.jumpupgrade:
 			animatedsprite.play("idle_backpack_boots")
+		elif GAME.jumpupgrade:
+			animatedsprite.play("idle_boots")
 		else:
 			animatedsprite.play("idle")
 	elif playercanmove: #run
 		if GAME.walljumpupgrade:
-			animatedsprite.play("run_backpack")
-		elif GAME.jumpupgrade:
 			animatedsprite.play("run_backpack_boots")
+		elif GAME.jumpupgrade:
+			animatedsprite.play("run_boots")
 		else:
 			animatedsprite.play("run")
 	else: #idle
 		if GAME.walljumpupgrade:
-			animatedsprite.play("idle_backpack")
-		elif GAME.jumpupgrade:
 			animatedsprite.play("idle_backpack_boots")
+		elif GAME.jumpupgrade:
+			animatedsprite.play("idle_boots")
 		else:
 			animatedsprite.play("idle")
 	
