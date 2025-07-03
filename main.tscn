@@ -1,26 +1,26 @@
-[gd_scene load_steps=40 format=4 uid="uid://yguq3apeqsn4"]
+[gd_scene load_steps=39 format=4 uid="uid://yguq3apeqsn4"]
 
 [ext_resource type="PackedScene" uid="uid://ux3n5puh5ctw" path="res://player.tscn" id="1_c37tn"]
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://tileset01.png" id="1_yg34a"]
-[ext_resource type="PackedScene" path="res://spikes.tscn" id="2_vrc4f"]
+[ext_resource type="PackedScene" uid="uid://bsmlnnnh0nwuy" path="res://spikes.tscn" id="2_vrc4f"]
 [ext_resource type="Texture2D" uid="uid://y6g7qt22rede" path="res://ui/pause.png" id="3_vpjef"]
 [ext_resource type="Texture2D" uid="uid://dt7hieo46wdax" path="res://ui/pausepressed.png" id="4_tplmv"]
 [ext_resource type="Texture2D" uid="uid://btdayx5qat3lk" path="res://ui/pausehover.png" id="5_p7mg2"]
-[ext_resource type="Script" path="res://ui/pause_button.gd" id="6_nwqmp"]
+[ext_resource type="Script" uid="uid://id0eyrcpf10i" path="res://ui/pause_button.gd" id="6_nwqmp"]
 [ext_resource type="Texture2D" uid="uid://dqpyplaq4o3p8" path="res://healthbarbg.png" id="7_qdu7q"]
 [ext_resource type="Texture2D" uid="uid://s6ok8jsgnj0v" path="res://healthbarframe.png" id="8_grxls"]
 [ext_resource type="Texture2D" uid="uid://dl4jtevl4gd7r" path="res://healthbar.png" id="9_hfobw"]
-[ext_resource type="Script" path="res://healthbar.gd" id="10_5we2d"]
-[ext_resource type="Script" path="res://hurt_effect.gd" id="11_70ns4"]
-[ext_resource type="PackedScene" path="res://higher_jump_upgrade.tscn" id="14_c4adx"]
+[ext_resource type="Script" uid="uid://d4llexskm5sh5" path="res://healthbar.gd" id="10_5we2d"]
+[ext_resource type="Script" uid="uid://bmrubdv8vw3su" path="res://hurt_effect.gd" id="11_70ns4"]
+[ext_resource type="PackedScene" uid="uid://cihy1ir3tk687" path="res://higher_jump_upgrade.tscn" id="14_c4adx"]
 [ext_resource type="Texture2D" uid="uid://d4cwlb8q2a6b0" path="res://mainbackgroundgradient.png" id="14_c5ygi"]
-[ext_resource type="Script" path="res://world_bottom.gd" id="15_imf8e"]
+[ext_resource type="Script" uid="uid://b2juvyr7rbb0e" path="res://world_bottom.gd" id="15_imf8e"]
 [ext_resource type="PackedScene" uid="uid://b83e8a0mlrr8" path="res://enemy_02.tscn" id="16_yl3ti"]
 [ext_resource type="PackedScene" uid="uid://fknxxt5r468x" path="res://enemy_01.tscn" id="17_5pnoy"]
 [ext_resource type="AudioStream" uid="uid://fyoj0v010hf0" path="res://music.mp3" id="19_0d7ol"]
 [ext_resource type="PackedScene" uid="uid://cec1mew7r2v8c" path="res://checkpoint.tscn" id="19_aak4y"]
-[ext_resource type="PackedScene" path="res://dashupgrade.tscn" id="19_pes66"]
-[ext_resource type="PackedScene" uid="uid://cyfjwvpl4nxmh" path="res://walljumpupgrade.tscn" id="21_4jing"]
+[ext_resource type="PackedScene" uid="uid://dj0yfuchs0etl" path="res://dashupgrade.tscn" id="19_pes66"]
+[ext_resource type="PackedScene" uid="uid://igjrlam0o3tq" path="res://walljumpupgrade.tscn" id="21_4jing"]
 [ext_resource type="Texture2D" uid="uid://b1is45pvkanss" path="res://decor1.png" id="22_rumfd"]
 [ext_resource type="Texture2D" uid="uid://dd43sok4cwp8r" path="res://decor2.png" id="23_qmqfc"]
 [ext_resource type="Texture2D" uid="uid://dl2yd0m8d7ku8" path="res://decor4.png" id="24_1kno1"]
@@ -122,14 +122,6 @@ fill = 1
 fill_from = Vector2(0.477064, 0.426605)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s720b"]
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dr7ij"]
-particle_flag_disable_z = true
-angle_min = 1.07288e-05
-angle_max = 1.07288e-05
-gravity = Vector3(0, 98, 0)
-scale_min = 2.0
-scale_max = 2.0
 
 [node name="Main" type="Node2D"]
 
@@ -258,18 +250,20 @@ position = Vector2(-48, -9603)
 position = Vector2(689, -9692)
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(0, 1500)
+z_index = 1
+position = Vector2(4, 2018)
 script = ExtResource("15_imf8e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
 shape = SubResource("WorldBoundaryShape2D_s720b")
 
 [node name="Mainbackgroundgradient" type="Sprite2D" parent="."]
 z_index = -3
+texture_repeat = 2
 position = Vector2(1046, 115)
 scale = Vector2(5, 5)
 texture = ExtResource("14_c5ygi")
-metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_0d7ol")
@@ -584,14 +578,33 @@ position = Vector2(-777, -2845)
 texture = ExtResource("29_2d5ji")
 
 [node name="bigcloud1" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(109, 3147)
-scale = Vector2(2.69506, 2.69506)
+z_index = 1
+position = Vector2(-4820.4, 2420.4)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("32_1e4jy")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(-2056, 2418)
-process_material = SubResource("ParticleProcessMaterial_dr7ij")
+[node name="bigcloud2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-1865.4, 2421.4)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("32_1e4jy")
+
+[node name="bigcloud3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1063.6, 2447.4)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("32_1e4jy")
+
+[node name="bigcloud4" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(4002.6, 2480.4)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("32_1e4jy")
+
+[node name="bigcloud5" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(6772.6, 2470.4)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("32_1e4jy")
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

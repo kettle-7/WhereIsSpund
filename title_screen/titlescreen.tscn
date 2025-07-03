@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://b125wiwn8732q"]
 
 [ext_resource type="Texture2D" uid="uid://dloxder4wgam1" path="res://title.png" id="1_dlqdl"]
-[ext_resource type="Script" path="res://title_screen/titlescreen.gd" id="2_0rhj2"]
-[ext_resource type="Script" path="res://quit_button.gd" id="3_25ark"]
+[ext_resource type="Script" uid="uid://ccltixgl88u2h" path="res://title_screen/titlescreen.gd" id="2_0rhj2"]
+[ext_resource type="Script" uid="uid://c0nlsu0wvenun" path="res://quit_button.gd" id="3_25ark"]
 
 [sub_resource type="SystemFont" id="SystemFont_1o75w"]
 font_names = PackedStringArray("Bernard MT")
