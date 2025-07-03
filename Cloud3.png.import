@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7peg04rt8j0a"
-path="res://.godot/imported/spring shoes.png-de96888d9f0b3da0c583624a273e3a3e.ctex"
+uid="uid://gold3q06kcce"
+path="res://.godot/imported/Cloud3.png-cd35768fc16d4ad99c6a1aa10006a812.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spring shoes.png"
-dest_files=["res://.godot/imported/spring shoes.png-de96888d9f0b3da0c583624a273e3a3e.ctex"]
+source_file="res://Cloud3.png"
+dest_files=["res://.godot/imported/Cloud3.png-cd35768fc16d4ad99c6a1aa10006a812.ctex"]
 
 [params]
 
