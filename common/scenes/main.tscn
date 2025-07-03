@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://yguq3apeqsn4"]
+[gd_scene load_steps=46 format=4 uid="uid://yguq3apeqsn4"]
 
 [ext_resource type="PackedScene" uid="uid://ux3n5puh5ctw" path="res://common/scenes/player.tscn" id="1_c37tn"]
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://common/map_elements/tileset01.png" id="1_yg34a"]
@@ -35,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://hgpfpg0grolx" path="res://sprites_and_animations/FarmerFinalFinalSpriteSheet.png" id="32_qjk7l"]
 [ext_resource type="Texture2D" uid="uid://dwbli2xeihrw7" path="res://common/decor/toutorial.png" id="33_omhkk"]
 [ext_resource type="Script" path="res://common/scenes/toutorial.gd" id="34_vlgmg"]
+[ext_resource type="Texture2D" uid="uid://ird3gaettgt0" path="res://common/map_elements/ladder.png" id="35_dej4d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jm6f0"]
 texture = ExtResource("1_yg34a")
@@ -628,5 +629,19 @@ position = Vector2(109, -161)
 scale = Vector2(5, 5)
 texture = ExtResource("33_omhkk")
 script = ExtResource("34_vlgmg")
+
+[node name="Ladder" type="Sprite2D" parent="."]
+position = Vector2(3715, -8529)
+rotation = 0.833133
+scale = Vector2(10, 10)
+texture = ExtResource("35_dej4d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ladder"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ladder/StaticBody2D"]
+position = Vector2(381.326, 848.552)
+rotation = -0.833133
+scale = Vector2(0.1, 0.1)
+polygon = PackedVector2Array(3274, -8063, 3211, -8137, 4159, -8995, 4228, -8920)
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
