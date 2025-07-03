@@ -345,10 +345,6 @@ metadata/_edit_lock_ = true
 stream = ExtResource("19_0d7ol")
 autoplay = true
 
-[node name="Higher Jump upgrade" parent="." instance=ExtResource("14_c4adx")]
-position = Vector2(-1774, 18)
-script = null
-
 [node name="Dashupgrade" parent="." instance=ExtResource("19_pes66")]
 position = Vector2(5639, -2715)
 
@@ -727,7 +723,7 @@ randomness = 0.5
 
 [node name="LadderLadNode#Area2D2" type="Area2D" parent="."]
 
-[node name="LadderLad_LadderLadNode#Area2D2#CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="LadderLad_LadderLadNode#Area2D2#CollisionShape2D" type="CollisionShape2D" parent="LadderLadNode#Area2D2"]
 position = Vector2(3017, -8304)
 shape = SubResource("CapsuleShape2D_xunt3")
 
@@ -768,5 +764,9 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(6273, -9351)
 shape = SubResource("RectangleShape2D_e80cv")
 
+[node name="Higher Jump upgrade" parent="." instance=ExtResource("14_c4adx")]
+position = Vector2(-1786, 22)
+
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="area_entered" from="LadderLadNode#Area2D2" to="Player" method="_farmer_speech"]
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D2" to="AnimatedSprite2D" method="_on_area_2d_2_body_entered"]
