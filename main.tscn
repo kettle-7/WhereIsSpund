@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dl4jtevl4gd7r" path="res://healthbar.png" id="9_hfobw"]
 [ext_resource type="Script" path="res://healthbar.gd" id="10_5we2d"]
 [ext_resource type="PackedScene" uid="uid://cec1mew7r2v8c" path="res://checkpoint.tscn" id="13_kk4v5"]
-[ext_resource type="PackedScene" uid="uid://cihy1ir3tk687" path="res://higher_jump_upgrade.tscn" id="14_c4adx"]
+[ext_resource type="PackedScene" path="res://higher_jump_upgrade.tscn" id="14_c4adx"]
 [ext_resource type="Texture2D" uid="uid://d4cwlb8q2a6b0" path="res://mainbackgroundgradient.png" id="14_c5ygi"]
 [ext_resource type="PackedScene" uid="uid://igjrlam0o3tq" path="res://walljumpupgrade.tscn" id="15_cvxv8"]
 [ext_resource type="Script" path="res://world_bottom.gd" id="15_imf8e"]

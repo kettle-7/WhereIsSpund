@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtji88r5q4obi"
-valid=false
+uid="uid://bwdi64ch66thb"
+path="res://.godot/imported/IntroPart1SpriteSheet.png-0b0e739f68af06bea1f7b1e8faf00fd8.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://opening_scene/moveyground1.png"
+source_file="res://opening_scene/IntroPart1SpriteSheet.png"
+dest_files=["res://.godot/imported/IntroPart1SpriteSheet.png-0b0e739f68af06bea1f7b1e8faf00fd8.ctex"]
 
 [params]
 
