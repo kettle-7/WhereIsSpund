@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b125wiwn8732q"]
+[gd_scene load_steps=8 format=3 uid="uid://b125wiwn8732q"]
 
 [ext_resource type="Texture2D" uid="uid://blblcer6yqyn1" path="res://TitleBackground.png" id="1_27lav"]
 [ext_resource type="Script" path="res://title_screen/titlescreen.gd" id="2_0rhj2"]
@@ -11,6 +11,15 @@ subpixel_positioning = 0
 [sub_resource type="LabelSettings" id="LabelSettings_364g7"]
 font = SubResource("SystemFont_jhljc")
 font_size = 55
+
+[sub_resource type="SystemFont" id="SystemFont_qylr5"]
+font_names = PackedStringArray("Papyrus")
+font_weight = 999
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ituw"]
+font = SubResource("SystemFont_qylr5")
+font_size = 26
+font_color = Color(0, 0, 0, 1)
 
 [node name="TitleScreenRoot" type="Control"]
 layout_mode = 3
@@ -42,8 +51,14 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/GridContainer"]
 layout_mode = 2
-text = "GREEN FLOATING ISLANDS VILLAIN"
+text = "THE LEGEND OF SPUND"
 label_settings = SubResource("LabelSettings_364g7")
+
+[node name="Label3" type="Label" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+text = "TEARS OF THE SPUNDOM"
+label_settings = SubResource("LabelSettings_2ituw")
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="CenterContainer/GridContainer"]
 layout_mode = 2
