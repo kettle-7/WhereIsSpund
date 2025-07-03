@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://yguq3apeqsn4"]
+[gd_scene load_steps=26 format=4 uid="uid://yguq3apeqsn4"]
 
 [ext_resource type="PackedScene" uid="uid://ux3n5puh5ctw" path="res://player.tscn" id="1_c37tn"]
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://tileset01.png" id="1_yg34a"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://s6ok8jsgnj0v" path="res://healthbarframe.png" id="8_grxls"]
 [ext_resource type="Texture2D" uid="uid://dl4jtevl4gd7r" path="res://healthbar.png" id="9_hfobw"]
 [ext_resource type="Script" path="res://healthbar.gd" id="10_5we2d"]
+[ext_resource type="Script" path="res://hurt_effect.gd" id="11_70ns4"]
 [ext_resource type="PackedScene" uid="uid://cec1mew7r2v8c" path="res://checkpoint.tscn" id="13_kk4v5"]
 [ext_resource type="PackedScene" uid="uid://cihy1ir3tk687" path="res://higher_jump_upgrade.tscn" id="14_c4adx"]
 [ext_resource type="Texture2D" uid="uid://d4cwlb8q2a6b0" path="res://mainbackgroundgradient.png" id="14_c5ygi"]
@@ -96,6 +97,14 @@ terrain_set_0/terrain_1/name = "Terrain 1"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_0vi3r")
 
+[sub_resource type="Gradient" id="Gradient_uqlcn"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_423kc"]
+gradient = SubResource("Gradient_uqlcn")
+fill = 1
+fill_from = Vector2(0.477064, 0.426605)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s720b"]
 
 [node name="Main" type="Node2D"]
@@ -126,6 +135,7 @@ texture_progress = ExtResource("9_hfobw")
 script = ExtResource("10_5we2d")
 
 [node name="PauseButton" type="TextureButton" parent="StaticUI"]
+z_index = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -136,6 +146,15 @@ texture_normal = ExtResource("3_vpjef")
 texture_pressed = ExtResource("4_tplmv")
 texture_hover = ExtResource("5_p7mg2")
 script = ExtResource("6_nwqmp")
+
+[node name="Hurt effect" type="TextureRect" parent="StaticUI"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -28.0
+offset_top = -29.0
+offset_right = 1181.0
+offset_bottom = 671.0
+texture = SubResource("GradientTexture2D_423kc")
+script = ExtResource("11_70ns4")
 
 [node name="enemies" type="Node2D" parent="."]
 

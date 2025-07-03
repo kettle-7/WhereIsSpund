@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6imfa0ogkvlk"]
+[gd_scene load_steps=8 format=3 uid="uid://c6imfa0ogkvlk"]
 
-[ext_resource type="Script" uid="uid://cdph06wteq3n2" path="res://bullet.gd" id="1_ut4mj"]
+[ext_resource type="Script" path="res://bullet.gd" id="1_ut4mj"]
 [ext_resource type="Texture2D" uid="uid://b3gp87ii8ahy" path="res://bullet.png" id="2_io05g"]
+[ext_resource type="AudioStream" uid="uid://cd26op8fdw1f3" path="res://Hit_hurt 6 (1).wav" id="3_41spy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1y8pv"]
 atlas = ExtResource("2_io05g")
@@ -44,6 +45,9 @@ collision_mask = 2
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_t5n2h")
 
+[node name="HitHurt6(1)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_41spy")
+
 [connection signal="area_shape_entered" from="Bulletarea" to="." method="_on_bulletarea_area_shape_entered"]
-[connection signal="body_entered" from="Bulletarea" to="." method="_on_bulletarea_body_entered"]
 [connection signal="body_entered" from="Bulletarea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Bulletarea" to="." method="_on_bulletarea_body_entered"]

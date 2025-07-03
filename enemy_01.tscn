@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://fknxxt5r468x"]
+[gd_scene load_steps=10 format=3 uid="uid://fknxxt5r468x"]
 
 [ext_resource type="Script" path="res://enemy_01.gd" id="1_hdsgg"]
 [ext_resource type="Texture2D" uid="uid://xttayh55e66p" path="res://enemy_1.png" id="2_t7m7e"]
+[ext_resource type="AudioStream" uid="uid://cd26op8fdw1f3" path="res://Hit_hurt 6 (1).wav" id="3_ynd32"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hdsgg"]
 radius = 71.0011
@@ -67,6 +68,9 @@ shape = SubResource("CapsuleShape2D_hdsgg")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="HitHurt6(1)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ynd32")
 
 [connection signal="area_entered" from="View area" to="." method="_on_view_area_area_entered"]
 [connection signal="area_exited" from="View area" to="." method="_on_view_area_area_exited"]

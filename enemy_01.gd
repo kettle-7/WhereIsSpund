@@ -3,10 +3,13 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 var health = 3
 @onready var timer: Timer = $Timer
+@onready var hit_hurt_6_1_: AudioStreamPlayer = $"HitHurt6(1)"
+
 
 var can_see_player = false
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "Bulletarea":
+		hit_hurt_6_1_.play()
 		health -= 1
 		modulate = Color.RED
 		timer.start()
