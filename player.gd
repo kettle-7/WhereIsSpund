@@ -54,7 +54,7 @@ func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_
 	# handle checkpoint collisions
 	if str(area.get_name()) == "checkpoint":
 		GAME.spawnx = area.global_position.x
-		GAME.spawny = area.global_position.y
+		GAME.spawny = area.global_position.y - 10
 	# handle spike collisions
 	if str(area.get_name()) == "spikes" or GAME.playerhealth < 1:
 		
@@ -68,14 +68,14 @@ func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_
 		
 	
 	if str(area.get_name()) == "hurtbox":
-		hurt_effect.modulate.a = 1
+		hurt_effect.self_modulate.a = 1
 		GAME.playerhealth -= randi_range(15,25)
 
 func _physics_process(delta):
 	if GAME.jumpupgrade:
 		JUMP_VELOCITY = -160
 	else:
-		JUMP_VELOCITY = -125
+		JUMP_VELOCITY = -110
 	
 	
 	if is_on_floor():
