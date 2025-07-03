@@ -258,10 +258,17 @@ script = ExtResource("15_imf8e")
 z_index = 1
 shape = SubResource("WorldBoundaryShape2D_s720b")
 
-[node name="Mainbackgroundgradient" type="Sprite2D" parent="."]
+[node name="Mainbackground2" type="Sprite2D" parent="."]
 z_index = -3
 texture_repeat = 2
-position = Vector2(1046, 115)
+position = Vector2(-4542, 115)
+scale = Vector2(5, 5)
+texture = ExtResource("14_c5ygi")
+
+[node name="Mainbackground1" type="Sprite2D" parent="."]
+z_index = -3
+texture_repeat = 2
+position = Vector2(7857, 115)
 scale = Vector2(5, 5)
 texture = ExtResource("14_c5ygi")
 
@@ -579,31 +586,55 @@ texture = ExtResource("29_2d5ji")
 
 [node name="bigcloud1" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(-4820.4, 2420.4)
+position = Vector2(-9570.4, 2383.4)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("32_1e4jy")
 
 [node name="bigcloud2" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(-1865.4, 2421.4)
+position = Vector2(-6615.4, 2384.4)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("32_1e4jy")
 
 [node name="bigcloud3" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(1063.6, 2447.4)
+position = Vector2(-3686.4, 2410.4)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("32_1e4jy")
 
 [node name="bigcloud4" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(4002.6, 2480.4)
+position = Vector2(-747.4, 2443.4)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("32_1e4jy")
 
 [node name="bigcloud5" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(6772.6, 2470.4)
+position = Vector2(2097, 2433)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("32_1e4jy")
+
+[node name="bigcloud6" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(7895, 2433)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("32_1e4jy")
+
+[node name="bigcloud9" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(4940, 2433)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("32_1e4jy")
+
+[node name="bigcloud7" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(10476, 2470)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("32_1e4jy")
+
+[node name="bigcloud8" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(12907, 2470)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("32_1e4jy")
 
