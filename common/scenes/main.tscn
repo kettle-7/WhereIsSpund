@@ -579,7 +579,7 @@ process_material = SubResource("ParticleProcessMaterial_dr7ij")
 position = Vector2(3028.36, -8220.36)
 scale = Vector2(-0.0887043, 0.0887043)
 sprite_frames = SubResource("SpriteFrames_1ngat")
-frame_progress = 0.490004
+frame_progress = 0.330608
 
 [node name="Area2D" type="Area2D" parent="LadderLadNode"]
 
