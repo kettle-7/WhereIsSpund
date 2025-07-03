@@ -1,7 +1,8 @@
 extends Node2D
 
-@onready var PlayerSpeech = $PlayerSpeechContainer/P/MarginContainer/PlayerSpeech;
-@onready var NPCSpeech = $NPCSpeechContainer/P/MarginContainer/NPCSpeech;
+@onready var PlayerSpeech: Label = $PlayerSpeechContainer/P/MarginContainer/PlayerSpeech;
+@onready var NPCSpeech: Label = $NPCSpeechContainer/P/MarginContainer/NPCSpeech;
+@onready var heartbeatTimer: Timer = $DialogueHeartbeat;
 
 var currentDialogue = [];
 var line = 0;
@@ -39,8 +40,8 @@ func _on_heartbeat() -> void:
 			beats = 0;
 			line += 1;
 			if (line >= len(currentDialogue)):
+				heartbeatTimer.stop();
 				GAME.postDialogueCallback.call();
-				return
 		if (currentDialogue[line][0]):
 			$PlayerSpeechContainer.visible = false;
 			$NPCSpeechContainer.visible = true;
@@ -59,4 +60,3 @@ func _on_heartbeat() -> void:
 		else:
 			PlayerSpeech.text = currentDialogue[line][1].substr(beats, -1)
 		pass
-	print(NPCSpeech.text)
