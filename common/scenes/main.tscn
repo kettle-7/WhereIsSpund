@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://yguq3apeqsn4"]
+[gd_scene load_steps=43 format=4 uid="uid://yguq3apeqsn4"]
 
 [ext_resource type="PackedScene" uid="uid://ux3n5puh5ctw" path="res://common/scenes/player.tscn" id="1_c37tn"]
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://common/map_elements/tileset01.png" id="1_yg34a"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://8cn22mfos5nd" path="res://common/decor/Cloud1.png" id="29_2d5ji"]
 [ext_resource type="Texture2D" uid="uid://bdicvhmlgbyv5" path="res://common/decor/Cloud2.png" id="30_pn2pf"]
 [ext_resource type="Texture2D" uid="uid://gold3q06kcce" path="res://common/decor/Cloud3.png" id="31_k0t5s"]
+[ext_resource type="Texture2D" uid="uid://hgpfpg0grolx" path="res://sprites_and_animations/FarmerFinalFinalSpriteSheet.png" id="32_qjk7l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jm6f0"]
 texture = ExtResource("1_yg34a")
@@ -129,6 +130,28 @@ angle_max = 1.07288e-05
 gravity = Vector3(0, 98, 0)
 scale_min = 2.0
 scale_max = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru8to"]
+atlas = ExtResource("32_qjk7l")
+region = Rect2(0, 0, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_637ve"]
+atlas = ExtResource("32_qjk7l")
+region = Rect2(1600, 0, 1600, 1600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ngat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru8to")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_637ve")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node2D"]
 
@@ -545,5 +568,10 @@ scale = Vector2(2.69506, 2.69506)
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(-2056, 2418)
 process_material = SubResource("ParticleProcessMaterial_dr7ij")
+
+[node name="LadderLad" type="AnimatedSprite2D" parent="."]
+position = Vector2(3023, -8207)
+scale = Vector2(0.0725, 0.0725)
+sprite_frames = SubResource("SpriteFrames_1ngat")
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
