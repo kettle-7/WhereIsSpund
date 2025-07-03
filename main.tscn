@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ux3n5puh5ctw" path="res://player.tscn" id="1_c37tn"]
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://tileset01.png" id="1_yg34a"]
-[ext_resource type="PackedScene" uid="uid://bsmlnnnh0nwuy" path="res://spikes.tscn" id="2_vrc4f"]
+[ext_resource type="PackedScene" path="res://spikes.tscn" id="2_vrc4f"]
 [ext_resource type="Texture2D" uid="uid://y6g7qt22rede" path="res://ui/pause.png" id="3_vpjef"]
 [ext_resource type="Texture2D" uid="uid://dt7hieo46wdax" path="res://ui/pausepressed.png" id="4_tplmv"]
 [ext_resource type="Texture2D" uid="uid://btdayx5qat3lk" path="res://ui/pausehover.png" id="5_p7mg2"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dl4jtevl4gd7r" path="res://healthbar.png" id="9_hfobw"]
 [ext_resource type="Script" path="res://healthbar.gd" id="10_5we2d"]
 [ext_resource type="Script" path="res://hurt_effect.gd" id="11_70ns4"]
-[ext_resource type="PackedScene" uid="uid://cihy1ir3tk687" path="res://higher_jump_upgrade.tscn" id="14_c4adx"]
+[ext_resource type="PackedScene" path="res://higher_jump_upgrade.tscn" id="14_c4adx"]
 [ext_resource type="Texture2D" uid="uid://d4cwlb8q2a6b0" path="res://mainbackgroundgradient.png" id="14_c5ygi"]
 [ext_resource type="Script" path="res://world_bottom.gd" id="15_imf8e"]
 [ext_resource type="PackedScene" uid="uid://b83e8a0mlrr8" path="res://enemy_02.tscn" id="16_yl3ti"]

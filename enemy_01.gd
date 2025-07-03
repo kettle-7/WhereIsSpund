@@ -22,7 +22,6 @@ func _process(delta: float) -> void:
 	
 	if can_see_player:
 		global_position = lerp(global_position, player.global_position,0.01)
-	print(can_see_player)
 	if player.global_position.x > global_position.x:
 		animated_sprite_2d.flip_h = false
 	else:
