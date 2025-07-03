@@ -22,6 +22,8 @@ var stepped = false
 var justonground = false
 var canshoot = true
 var candash = false
+@onready var hurt_effect: TextureRect = $"../StaticUI/Hurt effect"
+
 @onready var ray_cast_2d = $AnimatedSprite2D/RayCast2D
 @onready var walljump_timer = $"walljump timer"
 @onready var animatedsprite = $AnimatedSprite2D
@@ -55,6 +57,7 @@ func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_
 		GAME.spawny = area.global_position.y
 	# handle spike collisions
 	if str(area.get_name()) == "spikes" or GAME.playerhealth < 1:
+		
 		GAME.playerhealth = 100
 		get_tree().reload_current_scene()
 
@@ -65,6 +68,7 @@ func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_
 		
 	
 	if str(area.get_name()) == "hurtbox":
+		hurt_effect.modulate.a = 1
 		GAME.playerhealth -= randi_range(15,25)
 
 func _physics_process(delta):

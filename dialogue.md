@@ -20,6 +20,11 @@ Careful, that potion is quite powerful.
 
 Go on, try scaling that wall there, you got this!
 
+# Rock Climber
+	Stuck again?
+	Try these *Spring Shoes*, they might help you gain some height.
+
+Jumping around is fun, isn't it?
 
 # Cat
 	Mew.
@@ -27,7 +32,3 @@ Go on, try scaling that wall there, you got this!
 	Mreoww!
 	Meeowww
 	MNYeAEaEWr!
-
-
-
-
