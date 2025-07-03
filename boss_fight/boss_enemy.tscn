@@ -1318,7 +1318,7 @@ offset_top = -723.333
 offset_right = 376.667
 offset_bottom = -640.333
 theme = SubResource("Theme_cpguf")
-max_value = 25.0
+max_value = 30.0
 step = 1.0
 show_percentage = false
 

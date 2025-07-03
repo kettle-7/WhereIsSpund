@@ -264,10 +264,13 @@ func _on_shooting_cooldown_timeout() -> void:
 
 func _farmer_speech(area: Area2D) -> void:
 	if ("ladder" in GAME.seenNPCs):
+		$"../Ladder".visible = true;
+		$"../Ladder/StaticBody2D/CollisionPolygon2D".disabled = false;
 		return;
 	GAME.seenNPCs.append("ladder");
 	GAME.requestedDialogue = GAME.gameDialogues["ladder"];
 	GAME.NPCRequest = "farmer";
-	GAME.postDialogueCallback = func(): print("you got the ladder");
+	GAME.spawnx = global_position.x;
+	GAME.spawny = global_position.y;
 	get_tree().change_scene_to_file("res://dialogues/dialogue.tscn");
 	pass # Replace with function body.

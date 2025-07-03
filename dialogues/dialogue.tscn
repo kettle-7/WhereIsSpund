@@ -142,14 +142,14 @@ visible = false
 position = Vector2(198, 526)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_dvp6e")
-frame_progress = 0.974648
+frame_progress = 0.685537
 
 [node name="Climber" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(193, 526)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_gai4y")
-frame_progress = 0.674701
+frame_progress = 0.385587
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(574, 569)

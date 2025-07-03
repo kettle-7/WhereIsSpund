@@ -45,8 +45,8 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		timer.start()
 	
 	if health < 1:
-		
-		queue_free()
+		get_tree().change_scene_to_file("res://boss_fight/boss_death.tscn")
+
 
 
 func _on_timer_2_timeout() -> void:
