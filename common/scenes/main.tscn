@@ -265,6 +265,54 @@ position = Vector2(-2052, -2859)
 [node name="Enemy09" parent="enemies" instance=ExtResource("17_5pnoy")]
 position = Vector2(-1485, -2829)
 
+[node name="Enemy10" parent="enemies" instance=ExtResource("17_5pnoy")]
+position = Vector2(2860, -6157)
+
+[node name="Enemy11" parent="enemies" instance=ExtResource("17_5pnoy")]
+position = Vector2(2535, -6055)
+
+[node name="Enemy12" parent="enemies" instance=ExtResource("17_5pnoy")]
+position = Vector2(2198, -6210)
+
+[node name="Enemy13" parent="enemies" instance=ExtResource("16_yl3ti")]
+position = Vector2(1201, -5360)
+
+[node name="Enemy14" parent="enemies" instance=ExtResource("16_yl3ti")]
+position = Vector2(2029, -5359)
+
+[node name="Enemy15" parent="enemies" instance=ExtResource("17_5pnoy")]
+position = Vector2(-358, -9321)
+
+[node name="Enemy16" parent="enemies" instance=ExtResource("17_5pnoy")]
+position = Vector2(-259, -9438)
+
+[node name="Enemy17" parent="enemies" instance=ExtResource("17_5pnoy")]
+position = Vector2(-453, -9474)
+
+[node name="Enemy18" parent="enemies" instance=ExtResource("17_5pnoy")]
+position = Vector2(-328, -9617)
+
+[node name="Enemy19" parent="enemies" instance=ExtResource("17_5pnoy")]
+position = Vector2(-154, -9594)
+
+[node name="Enemy20" parent="enemies" instance=ExtResource("17_5pnoy")]
+position = Vector2(-169, -9276)
+
+[node name="Enemy21" parent="enemies" instance=ExtResource("17_5pnoy")]
+position = Vector2(-85, -9432)
+
+[node name="Enemy22" parent="enemies" instance=ExtResource("16_yl3ti")]
+position = Vector2(233, -9198)
+
+[node name="Enemy23" parent="enemies" instance=ExtResource("16_yl3ti")]
+position = Vector2(-4, -9204)
+
+[node name="Enemy24" parent="enemies" instance=ExtResource("16_yl3ti")]
+position = Vector2(446, -9201)
+
+[node name="Enemy25" parent="enemies" instance=ExtResource("16_yl3ti")]
+position = Vector2(643, -9198)
+
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, 1500)
 script = ExtResource("15_imf8e")

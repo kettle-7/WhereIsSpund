@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=4 uid="uid://dnu18orgl8dp5"]
+[gd_scene load_steps=24 format=4 uid="uid://dnu18orgl8dp5"]
 
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://common/map_elements/tileset01.png" id="1_50b3e"]
+[ext_resource type="Script" path="res://boss_fight/boss.gd" id="1_jyuqw"]
 [ext_resource type="PackedScene" uid="uid://bsmlnnnh0nwuy" path="res://common/scenes/spikes.tscn" id="2_baeng"]
 [ext_resource type="PackedScene" uid="uid://ux3n5puh5ctw" path="res://common/scenes/player.tscn" id="3_e81c1"]
 [ext_resource type="Texture2D" uid="uid://8cn22mfos5nd" path="res://common/decor/Cloud1.png" id="4_fbmjv"]
@@ -107,6 +108,8 @@ fill = 1
 fill_from = Vector2(0.477064, 0.426605)
 
 [node name="Node2D" type="Node2D"]
+process_priority = 10
+script = ExtResource("1_jyuqw")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -6
