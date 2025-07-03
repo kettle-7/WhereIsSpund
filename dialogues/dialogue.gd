@@ -49,6 +49,7 @@ func _on_heartbeat() -> void:
 			line += 1;
 			if (line >= len(currentDialogue)):
 				heartbeatTimer.stop();
+				print(GAME.postDialogueCallback);
 				GAME.postDialogueCallback.call();
 				return;
 		if (currentDialogue[line][0]):

@@ -6,6 +6,7 @@ var spawny = 70
 var jumpupgrade = false
 var walljumpupgrade = false
 var dashupgrade = false
+
 var seenNPCs = []
 var requestedDialogue = [];
 var postDialogueCallback = func(): get_tree().change_scene_to_file("res://common/scenes/main.tscn")
