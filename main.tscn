@@ -112,11 +112,11 @@ terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_jm6f0")
 sources/1 = SubResource("TileSetScenesCollectionSource_pqwdl")
 
-[sub_resource type="Gradient" id="Gradient_uqlcn"]
+[sub_resource type="Gradient" id="Gradient_tr63k"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_423kc"]
-gradient = SubResource("Gradient_uqlcn")
+gradient = SubResource("Gradient_tr63k")
 fill = 1
 fill_from = Vector2(0.477064, 0.426605)
 
