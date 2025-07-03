@@ -183,10 +183,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e80cv"]
 size = Vector2(306.001, 625.001)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rqrbv"]
-radius = 28.0
-height = 880.0
-
 [node name="Main" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -663,7 +659,9 @@ scale = Vector2(0.0725, 0.0725)
 sprite_frames = SubResource("SpriteFrames_1ngat")
 frame_progress = 0.330608
 
-[node name="LadderLadNode#Area2D2" type="Area2D" parent="."]
+[node name="LadderLadNode#Area2D2" type="Area2D" parent="LadderLad"]
+position = Vector2(-41696.6, 113200)
+scale = Vector2(13.7931, 13.7931)
 
 [node name="Toutorial" type="Sprite2D" parent="."]
 position = Vector2(109, -161)
