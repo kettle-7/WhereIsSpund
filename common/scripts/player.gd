@@ -257,5 +257,6 @@ func _farmer_speech(area: Area2D) -> void:
 	GAME.seenNPCs.append("ladder");
 	GAME.requestedDialogue = GAME.gameDialogues["ladder"];
 	GAME.NPCRequest = "farmer";
+	GAME.postDialogueCallback = func(): print("you got the ladder");
 	get_tree().change_scene_to_file("res://dialogues/dialogue.tscn");
 	pass # Replace with function body.
