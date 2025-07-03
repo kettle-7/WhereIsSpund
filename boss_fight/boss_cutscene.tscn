@@ -180,13 +180,14 @@ script = ExtResource("1_83gnc")
 offset_right = 1162.0
 offset_bottom = 660.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(572, 326)
 scale = Vector2(6.42, 6.42)
 sprite_frames = SubResource("SpriteFrames_gg2t7")
 autoplay = "default"
-frame_progress = 0.458421
+frame_progress = 0.0153013
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ajxdi")
