@@ -247,7 +247,7 @@ shape = SubResource("WorldBoundaryShape2D_s720b")
 
 [node name="Mainbackgroundgradient" type="Sprite2D" parent="."]
 z_index = -3
-position = Vector2(97, 47)
+position = Vector2(1046, 115)
 scale = Vector2(5, 5)
 texture = ExtResource("14_c5ygi")
 metadata/_edit_lock_ = true
