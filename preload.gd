@@ -1,8 +1,8 @@
 extends Node
 
 var playerhealth = 100
-var spawnx = 98
-var spawny = 70
+var spawnx = 2900
+var spawny = -8230
 var jumpupgrade = true
 var walljumpupgrade = true
 var dashupgrade = true
