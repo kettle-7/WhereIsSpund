@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0jj7o8rue7yp"]
+
+[ext_resource type="Script" path="res://boss_fight/boss_enemy.gd" id="1_qfa8f"]
+[ext_resource type="Texture2D" uid="uid://j0vclbm34531" path="res://sprites_and_animations/EvilVillianSpriteSheet.png" id="2_vg2in"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_12sf2"]
+radius = 633.412
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrm1q"]
+atlas = ExtResource("2_vg2in")
+region = Rect2(0, 0, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgsoj"]
+atlas = ExtResource("2_vg2in")
+region = Rect2(1600, 0, 1600, 1600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xlhxa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrm1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgsoj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aifbg"]
+radius = 546.667
+
+[node name="Boss enemy" type="CharacterBody2D"]
+scale = Vector2(0.3, 0.3)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_qfa8f")
+
+[node name="GRGGDR" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GRGGDR"]
+shape = SubResource("CircleShape2D_12sf2")
+debug_color = Color(1, 0.0106786, 0.0270814, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xlhxa")
+autoplay = "default"
+frame_progress = 0.235855
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_aifbg")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+
+[node name="Timer2" type="Timer" parent="."]
+autostart = true
+
+[connection signal="area_entered" from="GRGGDR" to="." method="_on_hurtbox_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
