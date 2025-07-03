@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://yguq3apeqsn4"]
+[gd_scene load_steps=47 format=4 uid="uid://yguq3apeqsn4"]
 
 [ext_resource type="PackedScene" uid="uid://ux3n5puh5ctw" path="res://common/scenes/player.tscn" id="1_c37tn"]
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://common/map_elements/tileset01.png" id="1_yg34a"]
@@ -244,7 +244,7 @@ shape = SubResource("WorldBoundaryShape2D_s720b")
 [node name="Mainbackgroundgradient" type="Sprite2D" parent="."]
 z_index = -3
 position = Vector2(-5864, 1.00001)
-scale = Vector2(5, 2.32821)
+scale = Vector2(5, 5)
 texture = ExtResource("14_c5ygi")
 metadata/_edit_lock_ = true
 
