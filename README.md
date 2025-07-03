@@ -1,2 +1,2 @@
-# NotImperfection
-for OP game jam 2025, WE WERE GROUP FOUR LETS GOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+# Where is Spund ?
+Our submission for the OP Game Jam 2025, enjoy :3
