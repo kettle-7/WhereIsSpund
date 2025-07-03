@@ -142,14 +142,14 @@ visible = false
 position = Vector2(198, 526)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_dvp6e")
-frame_progress = 0.411556
+frame_progress = 0.974648
 
 [node name="Climber" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(193, 526)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_gai4y")
-frame_progress = 0.11161
+frame_progress = 0.674701
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(574, 569)
@@ -207,7 +207,7 @@ text = "Hello  hjghjghjgh"
 
 [node name="DialogueHeartbeat" type="Timer" parent="."]
 process_callback = 0
-wait_time = 0.125
+wait_time = 0.06
 autostart = true
 
 [connection signal="timeout" from="DialogueHeartbeat" to="." method="_on_heartbeat"]

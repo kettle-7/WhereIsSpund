@@ -7,7 +7,7 @@ extends Node2D
 var currentDialogue = [];
 var line = 0;
 var beats = 0;
-var direction = true;
+var direction = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,7 +20,7 @@ func _ready() -> void:
 		$Climber.visible = true;
 	line = 0;
 	beats = 0;
-	direction = true;
+	direction = 0;
 	if (currentDialogue[0][0]):
 		$PlayerSpeechContainer.visible = false;
 		$NPCSpeechContainer.visible = true;
@@ -38,31 +38,36 @@ func _process(delta: float) -> void:
 func _on_heartbeat() -> void:
 	beats += 1;
 	if (beats >= len(currentDialogue[line][1])):
-		if (direction):
-			direction = !direction;
+		if (direction == 0):
+			direction = 1;
 			beats = 0;
+		elif (direction == 1):
+			direction = 2;
 		else:
-			direction = !direction;
+			direction = 0;
 			beats = 0;
 			line += 1;
 			if (line >= len(currentDialogue)):
 				heartbeatTimer.stop();
 				GAME.postDialogueCallback.call();
+				return;
 		if (currentDialogue[line][0]):
 			$PlayerSpeechContainer.visible = false;
 			$NPCSpeechContainer.visible = true;
 		else:
 			$PlayerSpeechContainer.visible = true;
 			$NPCSpeechContainer.visible = false;
-	if (direction):
+	if (direction == 0):
 		if (currentDialogue[line][0]):
-			NPCSpeech.text = currentDialogue[line][1].substr(0, beats)
+			NPCSpeech.text = currentDialogue[line][1].substr(0, beats);
 		else:
-			PlayerSpeech.text = currentDialogue[line][1].substr(0, beats)
+			PlayerSpeech.text = currentDialogue[line][1].substr(0, beats);
 		pass
+	elif (direction == 1):
+		return;
 	else:
 		if (currentDialogue[line][0]):
-			NPCSpeech.text = currentDialogue[line][1].substr(beats,-1)
+			NPCSpeech.text = currentDialogue[line][1].substr(beats,-1);
 		else:
-			PlayerSpeech.text = currentDialogue[line][1].substr(beats, -1)
+			PlayerSpeech.text = currentDialogue[line][1].substr(beats, -1);
 		pass
