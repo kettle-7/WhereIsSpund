@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://yguq3apeqsn4"]
+[gd_scene load_steps=38 format=4 uid="uid://yguq3apeqsn4"]
 
 [ext_resource type="PackedScene" uid="uid://ux3n5puh5ctw" path="res://player.tscn" id="1_c37tn"]
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://tileset01.png" id="1_yg34a"]
@@ -28,6 +28,9 @@
 [ext_resource type="Texture2D" uid="uid://vef61b0eixt3" path="res://sign3.png" id="26_e3xyo"]
 [ext_resource type="Texture2D" uid="uid://dtwfqbwbpwrv6" path="res://sign2.png" id="27_qb8n2"]
 [ext_resource type="Texture2D" uid="uid://bvcqwxt881xvq" path="res://sign1.png" id="28_eshuj"]
+[ext_resource type="Texture2D" uid="uid://8cn22mfos5nd" path="res://Cloud1.png" id="29_2d5ji"]
+[ext_resource type="Texture2D" uid="uid://bdicvhmlgbyv5" path="res://Cloud2.png" id="30_pn2pf"]
+[ext_resource type="Texture2D" uid="uid://gold3q06kcce" path="res://Cloud3.png" id="31_k0t5s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0vi3r"]
 texture = ExtResource("1_yg34a")
@@ -406,5 +409,169 @@ texture = ExtResource("28_eshuj")
 position = Vector2(-1257, -9996)
 scale = Vector2(5, 5)
 texture = ExtResource("28_eshuj")
+
+[node name="Cloud1" type="Sprite2D" parent="."]
+position = Vector2(-991, 402)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud2" type="Sprite2D" parent="."]
+position = Vector2(1109, 155)
+texture = ExtResource("30_pn2pf")
+
+[node name="Cloud3" type="Sprite2D" parent="."]
+position = Vector2(1799, -238)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud4" type="Sprite2D" parent="."]
+position = Vector2(1960, 228)
+texture = ExtResource("30_pn2pf")
+
+[node name="Cloud5" type="Sprite2D" parent="."]
+position = Vector2(-553, -566)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud6" type="Sprite2D" parent="."]
+position = Vector2(9, -589)
+texture = ExtResource("30_pn2pf")
+
+[node name="Cloud7" type="Sprite2D" parent="."]
+position = Vector2(1591, -1030)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud8" type="Sprite2D" parent="."]
+position = Vector2(1691, -966)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud9" type="Sprite2D" parent="."]
+position = Vector2(2895, -950)
+texture = ExtResource("31_k0t5s")
+
+[node name="Cloud10" type="Sprite2D" parent="."]
+position = Vector2(1215, -902)
+texture = ExtResource("30_pn2pf")
+
+[node name="Cloud11" type="Sprite2D" parent="."]
+position = Vector2(2162, -1645)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud12" type="Sprite2D" parent="."]
+position = Vector2(2354, -1681)
+texture = ExtResource("30_pn2pf")
+
+[node name="Cloud13" type="Sprite2D" parent="."]
+position = Vector2(2715, -2433)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud14" type="Sprite2D" parent="."]
+position = Vector2(2953, -2411)
+texture = ExtResource("30_pn2pf")
+
+[node name="Cloud15" type="Sprite2D" parent="."]
+position = Vector2(2731, -2309)
+texture = ExtResource("31_k0t5s")
+
+[node name="Cloud16" type="Sprite2D" parent="."]
+position = Vector2(4436, -2433)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud17" type="Sprite2D" parent="."]
+position = Vector2(4347, -2357)
+texture = ExtResource("31_k0t5s")
+
+[node name="Cloud18" type="Sprite2D" parent="."]
+position = Vector2(-505, -1264)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud19" type="Sprite2D" parent="."]
+position = Vector2(-188, -1029)
+texture = ExtResource("30_pn2pf")
+
+[node name="Cloud20" type="Sprite2D" parent="."]
+position = Vector2(-1489, -458)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud21" type="Sprite2D" parent="."]
+position = Vector2(-1812, 234)
+texture = ExtResource("30_pn2pf")
+
+[node name="Cloud22" type="Sprite2D" parent="."]
+position = Vector2(-1807, -955)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud23" type="Sprite2D" parent="."]
+position = Vector2(-2901, -1242)
+texture = ExtResource("30_pn2pf")
+
+[node name="Cloud24" type="Sprite2D" parent="."]
+position = Vector2(-2441, -1717)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud25" type="Sprite2D" parent="."]
+position = Vector2(-1202, -2306)
+texture = ExtResource("31_k0t5s")
+
+[node name="Cloud26" type="Sprite2D" parent="."]
+position = Vector2(28, -3537)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud27" type="Sprite2D" parent="."]
+position = Vector2(-1851, -3393)
+texture = ExtResource("30_pn2pf")
+
+[node name="Cloud28" type="Sprite2D" parent="."]
+position = Vector2(-2065, -3308)
+texture = ExtResource("31_k0t5s")
+
+[node name="Cloud29" type="Sprite2D" parent="."]
+position = Vector2(436, -4744)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud30" type="Sprite2D" parent="."]
+position = Vector2(2773, -5116)
+texture = ExtResource("30_pn2pf")
+
+[node name="Cloud31" type="Sprite2D" parent="."]
+position = Vector2(3763, -5862)
+texture = ExtResource("31_k0t5s")
+
+[node name="Cloud32" type="Sprite2D" parent="."]
+position = Vector2(1850, -6374)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud33" type="Sprite2D" parent="."]
+position = Vector2(-671, -8711)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud34" type="Sprite2D" parent="."]
+position = Vector2(1753, -7922)
+texture = ExtResource("30_pn2pf")
+
+[node name="Cloud35" type="Sprite2D" parent="."]
+position = Vector2(-204, -7770)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud36" type="Sprite2D" parent="."]
+position = Vector2(787, -6939)
+texture = ExtResource("30_pn2pf")
+
+[node name="Cloud37" type="Sprite2D" parent="."]
+position = Vector2(4567, -6041)
+texture = ExtResource("31_k0t5s")
+
+[node name="Cloud38" type="Sprite2D" parent="."]
+position = Vector2(3508, -6744)
+texture = ExtResource("30_pn2pf")
+
+[node name="Cloud39" type="Sprite2D" parent="."]
+position = Vector2(-1010, -5422)
+texture = ExtResource("29_2d5ji")
+
+[node name="Cloud40" type="Sprite2D" parent="."]
+position = Vector2(-247, -1813)
+texture = ExtResource("30_pn2pf")
+
+[node name="Cloud41" type="Sprite2D" parent="."]
+position = Vector2(-777, -2845)
+texture = ExtResource("29_2d5ji")
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
