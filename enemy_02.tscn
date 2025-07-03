@@ -29,7 +29,7 @@ animations = [{
 size = Vector2(20, 20.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjrl7"]
-size = Vector2(28.5, 22.2)
+size = Vector2(33.1, 22.2)
 
 [node name="Enemy02" type="CharacterBody2D"]
 position = Vector2(-3, 0)
@@ -61,6 +61,7 @@ target_position = Vector2(13, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
 position = Vector2(0.749999, -11)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bjrl7")
 debug_color = Color(1, 0, 0, 0.419608)
 

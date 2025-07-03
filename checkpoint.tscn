@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cec1mew7r2v8c"]
+[gd_scene load_steps=11 format=3 uid="uid://cec1mew7r2v8c"]
 
 [ext_resource type="Texture2D" uid="uid://dd7pq3vsrrwwc" path="res://pixilart-drawing (5).png" id="1_2brbk"]
+[ext_resource type="Script" path="res://checkpoint.gd" id="1_v6cfg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vlktd"]
 radius = 9.27793
@@ -57,6 +58,7 @@ animations = [{
 
 [node name="Checkpoint" type="Node2D"]
 scale = Vector2(5, 5)
+script = ExtResource("1_v6cfg")
 
 [node name="checkpoint" type="Area2D" parent="."]
 
@@ -70,3 +72,5 @@ position = Vector2(1.49012e-08, -10.2)
 scale = Vector2(0.40625, 0.398438)
 sprite_frames = SubResource("SpriteFrames_p0n4k")
 autoplay = "default"
+
+[connection signal="area_entered" from="checkpoint" to="." method="_on_checkpoint_area_entered"]

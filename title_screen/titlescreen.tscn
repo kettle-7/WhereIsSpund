@@ -1,25 +1,106 @@
-[gd_scene load_steps=8 format=3 uid="uid://b125wiwn8732q"]
+[gd_scene load_steps=11 format=3 uid="uid://b125wiwn8732q"]
 
-[ext_resource type="Texture2D" uid="uid://blblcer6yqyn1" path="res://TitleBackground.png" id="1_27lav"]
+[ext_resource type="Texture2D" uid="uid://dloxder4wgam1" path="res://title.png" id="1_dlqdl"]
 [ext_resource type="Script" path="res://title_screen/titlescreen.gd" id="2_0rhj2"]
 [ext_resource type="Script" path="res://quit_button.gd" id="3_25ark"]
 
-[sub_resource type="SystemFont" id="SystemFont_jhljc"]
-font_names = PackedStringArray("Comic Sans MS")
-subpixel_positioning = 0
+[sub_resource type="SystemFont" id="SystemFont_1o75w"]
+font_names = PackedStringArray("Bernard MT")
 
-[sub_resource type="LabelSettings" id="LabelSettings_364g7"]
-font = SubResource("SystemFont_jhljc")
-font_size = 55
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4whro"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
-[sub_resource type="SystemFont" id="SystemFont_qylr5"]
-font_names = PackedStringArray("Papyrus")
-font_weight = 999
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sfmh3"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.968627)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
-[sub_resource type="LabelSettings" id="LabelSettings_2ituw"]
-font = SubResource("SystemFont_qylr5")
-font_size = 26
-font_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c33k8"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qo0wq"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 0.427451, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ed43v"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_m7vs1"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 64
+Button/fonts/font = SubResource("SystemFont_1o75w")
+Button/styles/disabled = SubResource("StyleBoxFlat_4whro")
+Button/styles/focus = SubResource("StyleBoxFlat_sfmh3")
+Button/styles/hover = SubResource("StyleBoxFlat_c33k8")
+Button/styles/normal = SubResource("StyleBoxFlat_qo0wq")
+Button/styles/pressed = SubResource("StyleBoxFlat_ed43v")
 
 [node name="TitleScreenRoot" type="Control"]
 layout_mode = 3
@@ -28,6 +109,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_m7vs1")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -36,48 +118,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_27lav")
+texture = ExtResource("1_dlqdl")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+[node name="GridContainer2" type="VBoxContainer" parent="."]
 layout_mode = 2
+offset_left = 18.0
+offset_top = 16.0
+offset_right = 202.0
+offset_bottom = 226.0
+size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CenterContainer/GridContainer"]
-layout_mode = 2
-text = "THE LEGEND OF SPUND"
-label_settings = SubResource("LabelSettings_364g7")
-
-[node name="Label3" type="Label" parent="CenterContainer/GridContainer"]
-layout_mode = 2
-text = "TEARS OF THE SPUNDOM"
-label_settings = SubResource("LabelSettings_2ituw")
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="CenterContainer/GridContainer"]
-layout_mode = 2
-text = "owh nyo he stowe de gween fwoating iswands"
-horizontal_alignment = 1
-
-[node name="GridContainer" type="GridContainer" parent="CenterContainer/GridContainer"]
+[node name="PlayButton" type="Button" parent="GridContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
-columns = 2
-
-[node name="PlayButton" type="Button" parent="CenterContainer/GridContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "play"
 script = ExtResource("2_0rhj2")
 
-[node name="QuitButton" type="Button" parent="CenterContainer/GridContainer/GridContainer"]
+[node name="QuitButton" type="Button" parent="GridContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "don't play"
+size_flags_vertical = 3
+text = "Quit"
 script = ExtResource("3_25ark")

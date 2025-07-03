@@ -1,9 +1,19 @@
-# Townsperson
-	Too far to reach? Hm...
-	Oh! I have a *Ladder* you can borrow, 
-	but you'll need to defeat some snails in my garden first.
+# Neighbor
+	I'm sorry to hear you lost **Spund**, I hope you find him again.
 
-You'd better fetch the ladder before the snails do!
+Cats always get stuck in the strangest of places don't they?
+
+# Townsperson
+	Have I seen your cat? Spund?
+	...
+	I'm afraid not, sorry.
+
+# Rock Climber
+	Need some help?
+	You won't get very far without a *Climbing Kit*
+	Here, you can use mine.
+
+Go on, try scaling that wall there, you got this!
 
 # Wizard
 	Pesky ghosts!
@@ -13,12 +23,13 @@ You'd better fetch the ladder before the snails do!
 
 Careful, that potion is quite powerful.
 
-# Rock Climber
-	Need some help?
-	You won't get very far without a *Climbing Kit*
-	Here, you can use mine.
+# Farmer
+	Too far to reach? Hm...
+	Oh! I have a *Ladder* you can borrow, 
+	but you'll need to defeat some snails in my garden first.
 
-Go on, try scaling that wall there, you got this!
+You'd better fetch the ladder before the snails do!
+
 
 # Rock Climber
 	Stuck again?
@@ -26,7 +37,7 @@ Go on, try scaling that wall there, you got this!
 
 Jumping around is fun, isn't it?
 
-# Cat
+# Spund
 	Mew.
 	Meoww
 	Mreoww!

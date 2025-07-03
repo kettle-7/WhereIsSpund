@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7peg04rt8j0a"
-path="res://.godot/imported/spring shoes.png-de96888d9f0b3da0c583624a273e3a3e.ctex"
+uid="uid://b3bundyrnrkky"
+path="res://.godot/imported/wizard-talking4.png-ed7869b6b5676ddce05fb62435e68b93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spring shoes.png"
-dest_files=["res://.godot/imported/spring shoes.png-de96888d9f0b3da0c583624a273e3a3e.ctex"]
+source_file="res://sprites_and_animations/wizard-talking4.png"
+dest_files=["res://.godot/imported/wizard-talking4.png-ed7869b6b5676ddce05fb62435e68b93.ctex"]
 
 [params]
 
