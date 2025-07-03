@@ -183,6 +183,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e80cv"]
 size = Vector2(306.001, 625.001)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rqrbv"]
+radius = 28.0
+height = 880.0
+
 [node name="Main" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -668,8 +672,9 @@ texture = ExtResource("33_omhkk")
 script = ExtResource("34_vlgmg")
 
 [node name="Ladder" type="Sprite2D" parent="."]
-position = Vector2(3715, -8529)
-rotation = 0.833133
+visible = false
+position = Vector2(3740, -8492)
+rotation = 0.922488
 scale = Vector2(10, 10)
 texture = ExtResource("35_dej4d")
 
