@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cec1mew7r2v8c"]
+[gd_scene load_steps=12 format=3 uid="uid://cec1mew7r2v8c"]
 
 [ext_resource type="Texture2D" uid="uid://dd7pq3vsrrwwc" path="res://common/map_elements/pixilart-drawing (5).png" id="1_2brbk"]
 [ext_resource type="Script" path="res://common/scripts/checkpoint.gd" id="1_v6cfg"]
+[ext_resource type="AudioStream" uid="uid://3u0gsv7yhawe" path="res://common/Powerup 6.wav" id="3_mjoxn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vlktd"]
 radius = 9.27793
@@ -72,5 +73,9 @@ position = Vector2(1.49012e-08, -10.2)
 scale = Vector2(0.40625, 0.398438)
 sprite_frames = SubResource("SpriteFrames_p0n4k")
 autoplay = "default"
+
+[node name="Powerup6" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-0.2, -3)
+stream = ExtResource("3_mjoxn")
 
 [connection signal="area_entered" from="checkpoint" to="." method="_on_checkpoint_area_entered"]

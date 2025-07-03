@@ -34,6 +34,8 @@ const BULLET = preload("res://common/scenes/bullet.tscn")
 @onready var debuglabel = $debuglabel
 @onready var cyote_jump_timer: Timer = $CyoteJumpTimer
 @onready var shooting_cooldown: Timer = $"shooting cooldown"
+@onready var shoot: AudioStreamPlayer = $shoot
+@onready var hurt: AudioStreamPlayer = $hurt
 
 @export var bubbleon = 0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -69,7 +71,8 @@ func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_
 	
 	if str(area.get_name()) == "hurtbox":
 		hurt_effect.self_modulate.a = 1
-		GAME.playerhealth -= randi_range(15,25)
+		hurt.play()
+		GAME.playerhealth -= randi_range(25,50)
 
 func _physics_process(delta):
 	
@@ -229,7 +232,7 @@ func _physics_process(delta):
 		instance.direction = !animatedsprite.flip_h
 		canshoot = false
 		shooting_cooldown.start()
-		
+		shoot.play()
 		add_sibling(instance)
 		
 	
