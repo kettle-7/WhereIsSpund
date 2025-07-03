@@ -128,6 +128,8 @@ particle_flag_disable_z = true
 angle_min = 1.07288e-05
 angle_max = 1.07288e-05
 gravity = Vector3(0, 98, 0)
+scale_min = 2.0
+scale_max = 2.0
 
 [node name="Main" type="Node2D"]
 
@@ -588,7 +590,7 @@ scale = Vector2(2.69506, 2.69506)
 texture = ExtResource("32_1e4jy")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(-3608, 2872)
+position = Vector2(-2056, 2418)
 process_material = SubResource("ParticleProcessMaterial_dr7ij")
 texture = ExtResource("32_1e4jy")
 
