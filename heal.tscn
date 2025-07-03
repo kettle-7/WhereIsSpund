@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3t85v18vd3jr"]
+
+[ext_resource type="Script" path="res://heal.gd" id="1_mgn1v"]
+[ext_resource type="Texture2D" uid="uid://2i81hhn3h356" path="res://common/map_elements/heal.png" id="2_bb6up"]
+[ext_resource type="AudioStream" uid="uid://3u0gsv7yhawe" path="res://common/Powerup 6.wav" id="3_5gbib"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k8ega"]
+radius = 6.0
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_mgn1v")
+
+[node name="Heal" type="Sprite2D" parent="."]
+texture = ExtResource("2_bb6up")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_k8ega")
+
+[node name="Powerup6" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5gbib")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0wmhipcpyavi"
+path="res://.godot/imported/Carl Orff - O Fortuna _ Carmina Burana.mp3-ac3e25f501616e137e0a5f86d3de52e5.mp3str"
+
+[deps]
+
+source_file="res://common/Carl Orff - O Fortuna _ Carmina Burana.mp3"
+dest_files=["res://.godot/imported/Carl Orff - O Fortuna _ Carmina Burana.mp3-ac3e25f501616e137e0a5f86d3de52e5.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
