@@ -122,6 +122,14 @@ fill_from = Vector2(0.477064, 0.426605)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s720b"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dr7ij"]
+particle_flag_disable_z = true
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+gravity = Vector3(0, 98, 0)
+scale_min = 2.0
+scale_max = 2.0
+
 [node name="Main" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -527,5 +535,16 @@ texture = ExtResource("30_pn2pf")
 [node name="Cloud41" type="Sprite2D" parent="."]
 position = Vector2(-777, -2845)
 texture = ExtResource("29_2d5ji")
+
+[node name="bigcloud1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(109, 3147)
+scale = Vector2(2.69506, 2.69506)
+texture = ExtResource("32_1e4jy")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-2056, 2418)
+process_material = SubResource("ParticleProcessMaterial_dr7ij")
+texture = ExtResource("32_1e4jy")
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
