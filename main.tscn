@@ -93,7 +93,7 @@ texture = ExtResource("1_yg34a")
 scenes/1/scene = ExtResource("2_vrc4f")
 
 [sub_resource type="TileSet" id="TileSet_howso"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
 terrain_set_0/mode = 2
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
