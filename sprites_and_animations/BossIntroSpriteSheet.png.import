@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j0vclbm34531"
-path="res://.godot/imported/EvilVillianSpriteSheet.png-46d28057c43524a4efdac7d6c89d5db0.ctex"
+uid="uid://blos4xb0t6kji"
+path="res://.godot/imported/BossIntroSpriteSheet.png-2f4b34f429e1769b0a73290c32c51049.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites_and_animations/EvilVillianSpriteSheet.png"
-dest_files=["res://.godot/imported/EvilVillianSpriteSheet.png-46d28057c43524a4efdac7d6c89d5db0.ctex"]
+source_file="res://sprites_and_animations/BossIntroSpriteSheet.png"
+dest_files=["res://.godot/imported/BossIntroSpriteSheet.png-2f4b34f429e1769b0a73290c32c51049.ctex"]
 
 [params]
 

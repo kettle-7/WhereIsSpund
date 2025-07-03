@@ -223,12 +223,15 @@ func _physics_process(delta):
 	# bullets
 	if Input.is_action_just_pressed("z") and canshoot:
 		var instance = BULLET.instantiate()
+		instance.position = Vector2(0,0)
 		shooting_cooldown.start()
 		instance.global_position = global_position
 		instance.direction = !animatedsprite.flip_h
 		canshoot = false
 		shooting_cooldown.start()
+		
 		add_sibling(instance)
+		
 	
 	move_and_slide()
 

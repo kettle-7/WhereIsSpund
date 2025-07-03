@@ -30,6 +30,7 @@ animations = [{
 radius = 3.16228
 
 [node name="Bullet" type="Node2D"]
+z_index = 1
 scale = Vector2(5, 5)
 script = ExtResource("1_ut4mj")
 
@@ -49,5 +50,5 @@ shape = SubResource("CircleShape2D_t5n2h")
 stream = ExtResource("3_41spy")
 
 [connection signal="area_shape_entered" from="Bulletarea" to="." method="_on_bulletarea_area_shape_entered"]
-[connection signal="body_entered" from="Bulletarea" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Bulletarea" to="." method="_on_bulletarea_body_entered"]
+[connection signal="body_entered" from="Bulletarea" to="." method="_on_area_2d_body_entered"]
