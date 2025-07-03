@@ -1,6 +1,6 @@
 extends CharacterBody2D
 @onready var player: CharacterBody2D = $"../Player"
-const BOSS_BULLET = preload("res://boss_bullet.tscn")
+const BOSS_BULLET = preload("res://boss_fight/boss_bullet.tscn")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 var health = 20
 @onready var timer: Timer = $Timer

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://dnu18orgl8dp5"]
+[gd_scene load_steps=23 format=4 uid="uid://dnu18orgl8dp5"]
 
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://common/map_elements/tileset01.png" id="1_50b3e"]
 [ext_resource type="PackedScene" uid="uid://bsmlnnnh0nwuy" path="res://common/scenes/spikes.tscn" id="2_baeng"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://dt7hieo46wdax" path="res://ui/pausepressed.png" id="13_0lks3"]
 [ext_resource type="Texture2D" uid="uid://btdayx5qat3lk" path="res://ui/pausehover.png" id="14_rs1dc"]
 [ext_resource type="Script" path="res://ui/pause_button.gd" id="15_bivg7"]
+[ext_resource type="PackedScene" uid="uid://c3t85v18vd3jr" path="res://heal.tscn" id="16_3vub1"]
+[ext_resource type="AudioStream" uid="uid://c0wmhipcpyavi" path="res://common/Carl Orff - O Fortuna _ Carmina Burana.mp3" id="17_e7xnp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_23bod"]
 texture = ExtResource("1_50b3e")
@@ -187,3 +189,26 @@ texture_normal = ExtResource("12_s2cbi")
 texture_pressed = ExtResource("13_0lks3")
 texture_hover = ExtResource("14_rs1dc")
 script = ExtResource("15_bivg7")
+
+[node name="Node2D" parent="." instance=ExtResource("16_3vub1")]
+position = Vector2(323, -370)
+
+[node name="Node2D2" parent="." instance=ExtResource("16_3vub1")]
+position = Vector2(2036, 343)
+
+[node name="Node2D3" parent="." instance=ExtResource("16_3vub1")]
+position = Vector2(-652, 532)
+
+[node name="Node2D4" parent="." instance=ExtResource("16_3vub1")]
+position = Vector2(1668, -602)
+
+[node name="Node2D5" parent="." instance=ExtResource("16_3vub1")]
+position = Vector2(2103, -942)
+
+[node name="Node2D6" parent="." instance=ExtResource("16_3vub1")]
+position = Vector2(-703, -535)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_e7xnp")
+volume_db = 1.0
+autoplay = true
