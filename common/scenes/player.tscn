@@ -1,9 +1,11 @@
-[gd_scene load_steps=52 format=3 uid="uid://ux3n5puh5ctw"]
+[gd_scene load_steps=54 format=3 uid="uid://ux3n5puh5ctw"]
 
 [ext_resource type="Script" path="res://common/scripts/player.gd" id="1_sijb2"]
 [ext_resource type="Texture2D" uid="uid://wmpagpi76hg3" path="res://common/entities/Sprite-0001.png" id="2_ejoa0"]
 [ext_resource type="Texture2D" uid="uid://rmhn52yfi1nb" path="res://common/entities/Sprite-0000.png" id="2_moibw"]
 [ext_resource type="Texture2D" uid="uid://ckkdgk0t0m44l" path="res://common/entities/Sprite-0002.png" id="4_a0h2m"]
+[ext_resource type="AudioStream" uid="uid://1y7qnx15vix8" path="res://common/Laser_shoot 3.wav" id="5_di0v6"]
+[ext_resource type="AudioStream" uid="uid://djs73yk4jnadq" path="res://common/Hit_hurt 15.wav" id="6_fdu1x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_31qxm"]
 atlas = ExtResource("2_moibw")
@@ -463,6 +465,13 @@ wait_time = 0.1
 
 [node name="shooting cooldown" type="Timer" parent="."]
 wait_time = 0.4
+
+[node name="shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_di0v6")
+
+[node name="hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_fdu1x")
+volume_db = 3.2
 
 [connection signal="area_shape_entered" from="player_area" to="." method="_on_pa_area_shape_entered"]
 [connection signal="area_shape_exited" from="player_area" to="." method="_on_pa_area_shape_exited"]

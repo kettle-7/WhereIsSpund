@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b83e8a0mlrr8"]
+[gd_scene load_steps=9 format=3 uid="uid://b83e8a0mlrr8"]
 
 [ext_resource type="Script" path="res://common/scripts/enemy_02.gd" id="1_bjrl7"]
 [ext_resource type="Texture2D" uid="uid://coq7esnyyt48r" path="res://common/entities/Enemy02.png" id="2_8mdog"]
+[ext_resource type="AudioStream" uid="uid://cd26op8fdw1f3" path="res://common/Hit_hurt 6 (1).wav" id="3_6cfw0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fgj43"]
 atlas = ExtResource("2_8mdog")
@@ -66,6 +67,9 @@ debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="HitHurt6(1)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6cfw0")
 
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

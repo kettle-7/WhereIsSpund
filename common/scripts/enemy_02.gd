@@ -24,6 +24,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area.name == "Bulletarea":
 		health -= 1
 		modulate = Color.RED
+		$"HitHurt6(1)".play()
 		timer.start()
 	
 	if health < 1:

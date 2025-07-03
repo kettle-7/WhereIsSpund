@@ -28,14 +28,12 @@ var candash = false
 @onready var walljump_timer = $"walljump timer"
 @onready var animatedsprite = $AnimatedSprite2D
 
-const BULLET = preload("res://common/scenes/bullet.tscn")
+const BULLET = preload("res://bullet.tscn")
 @onready var collision_shape_2d_head = $head
 @onready var bubble = $bubble
 @onready var debuglabel = $debuglabel
 @onready var cyote_jump_timer: Timer = $CyoteJumpTimer
 @onready var shooting_cooldown: Timer = $"shooting cooldown"
-@onready var shoot: AudioStreamPlayer = $shoot
-@onready var hurt: AudioStreamPlayer = $hurt
 
 @export var bubbleon = 0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -71,8 +69,7 @@ func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_
 	
 	if str(area.get_name()) == "hurtbox":
 		hurt_effect.self_modulate.a = 1
-		hurt.play()
-		GAME.playerhealth -= randi_range(25,50)
+		GAME.playerhealth -= randi_range(15,25)
 
 func _physics_process(delta):
 	
@@ -232,7 +229,7 @@ func _physics_process(delta):
 		instance.direction = !animatedsprite.flip_h
 		canshoot = false
 		shooting_cooldown.start()
-		shoot.play()
+		
 		add_sibling(instance)
 		
 	
@@ -249,14 +246,3 @@ func _on_cyote_jump_timer_timeout() -> void:
 
 func _on_shooting_cooldown_timeout() -> void:
 	canshoot = true
-
-
-func _farmer_speech(area: Area2D) -> void:
-	if ("ladder" in GAME.seenNPCs):
-		return;
-	GAME.seenNPCs.append("ladder");
-	GAME.requestedDialogue = GAME.gameDialogues["ladder"];
-	GAME.NPCRequest = "farmer";
-	GAME.postDialogueCallback = func(): print("you got the ladder");
-	get_tree().change_scene_to_file("res://dialogues/dialogue.tscn");
-	pass # Replace with function body.
