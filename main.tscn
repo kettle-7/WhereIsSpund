@@ -1,8 +1,8 @@
-[gd_scene load_steps=38 format=4 uid="uid://yguq3apeqsn4"]
+[gd_scene load_steps=40 format=4 uid="uid://yguq3apeqsn4"]
 
 [ext_resource type="PackedScene" uid="uid://ux3n5puh5ctw" path="res://player.tscn" id="1_c37tn"]
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://tileset01.png" id="1_yg34a"]
-[ext_resource type="PackedScene" uid="uid://bsmlnnnh0nwuy" path="res://spikes.tscn" id="2_vrc4f"]
+[ext_resource type="PackedScene" path="res://spikes.tscn" id="2_vrc4f"]
 [ext_resource type="Texture2D" uid="uid://y6g7qt22rede" path="res://ui/pause.png" id="3_vpjef"]
 [ext_resource type="Texture2D" uid="uid://dt7hieo46wdax" path="res://ui/pausepressed.png" id="4_tplmv"]
 [ext_resource type="Texture2D" uid="uid://btdayx5qat3lk" path="res://ui/pausehover.png" id="5_p7mg2"]
@@ -12,15 +12,15 @@
 [ext_resource type="Texture2D" uid="uid://dl4jtevl4gd7r" path="res://healthbar.png" id="9_hfobw"]
 [ext_resource type="Script" path="res://healthbar.gd" id="10_5we2d"]
 [ext_resource type="Script" path="res://hurt_effect.gd" id="11_70ns4"]
-[ext_resource type="PackedScene" uid="uid://cihy1ir3tk687" path="res://higher_jump_upgrade.tscn" id="14_c4adx"]
+[ext_resource type="PackedScene" path="res://higher_jump_upgrade.tscn" id="14_c4adx"]
 [ext_resource type="Texture2D" uid="uid://d4cwlb8q2a6b0" path="res://mainbackgroundgradient.png" id="14_c5ygi"]
 [ext_resource type="Script" path="res://world_bottom.gd" id="15_imf8e"]
 [ext_resource type="PackedScene" uid="uid://b83e8a0mlrr8" path="res://enemy_02.tscn" id="16_yl3ti"]
 [ext_resource type="PackedScene" uid="uid://fknxxt5r468x" path="res://enemy_01.tscn" id="17_5pnoy"]
 [ext_resource type="AudioStream" uid="uid://fyoj0v010hf0" path="res://music.mp3" id="19_0d7ol"]
 [ext_resource type="PackedScene" uid="uid://cec1mew7r2v8c" path="res://checkpoint.tscn" id="19_aak4y"]
-[ext_resource type="PackedScene" uid="uid://dj0yfuchs0etl" path="res://dashupgrade.tscn" id="19_pes66"]
-[ext_resource type="PackedScene" uid="uid://igjrlam0o3tq" path="res://walljumpupgrade.tscn" id="21_4jing"]
+[ext_resource type="PackedScene" path="res://dashupgrade.tscn" id="19_pes66"]
+[ext_resource type="PackedScene" uid="uid://cyfjwvpl4nxmh" path="res://walljumpupgrade.tscn" id="21_4jing"]
 [ext_resource type="Texture2D" uid="uid://b1is45pvkanss" path="res://decor1.png" id="22_rumfd"]
 [ext_resource type="Texture2D" uid="uid://dd43sok4cwp8r" path="res://decor2.png" id="23_qmqfc"]
 [ext_resource type="Texture2D" uid="uid://dl2yd0m8d7ku8" path="res://decor4.png" id="24_1kno1"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://8cn22mfos5nd" path="res://Cloud1.png" id="29_2d5ji"]
 [ext_resource type="Texture2D" uid="uid://bdicvhmlgbyv5" path="res://Cloud2.png" id="30_pn2pf"]
 [ext_resource type="Texture2D" uid="uid://gold3q06kcce" path="res://Cloud3.png" id="31_k0t5s"]
+[ext_resource type="Texture2D" uid="uid://bs4gk4ykytfnk" path="res://bottomcloud.png" id="32_1e4jy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jm6f0"]
 texture = ExtResource("1_yg34a")
@@ -121,6 +122,12 @@ fill = 1
 fill_from = Vector2(0.477064, 0.426605)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s720b"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dr7ij"]
+particle_flag_disable_z = true
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+gravity = Vector3(0, 98, 0)
 
 [node name="Main" type="Node2D"]
 
@@ -573,5 +580,16 @@ texture = ExtResource("30_pn2pf")
 [node name="Cloud41" type="Sprite2D" parent="."]
 position = Vector2(-777, -2845)
 texture = ExtResource("29_2d5ji")
+
+[node name="bigcloud1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(109, 3147)
+scale = Vector2(2.69506, 2.69506)
+texture = ExtResource("32_1e4jy")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-3608, 2872)
+process_material = SubResource("ParticleProcessMaterial_dr7ij")
+texture = ExtResource("32_1e4jy")
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

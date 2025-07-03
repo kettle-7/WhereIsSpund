@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://igjrlam0o3tq"]
+[gd_scene load_steps=4 format=3 uid="uid://cyfjwvpl4nxmh"]
 
 [ext_resource type="Script" path="res://walljumpupgrade.gd" id="1_do8gh"]
 [ext_resource type="Texture2D" uid="uid://bq0kytdmyw1r0" path="res://walljumpupgrade.png" id="2_1cqbr"]
