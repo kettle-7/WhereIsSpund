@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://yguq3apeqsn4"]
+[gd_scene load_steps=70 format=4 uid="uid://yguq3apeqsn4"]
 
 [ext_resource type="PackedScene" uid="uid://ux3n5puh5ctw" path="res://common/scenes/player.tscn" id="1_c37tn"]
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://common/map_elements/tileset01.png" id="1_yg34a"]
@@ -164,9 +164,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xunt3"]
-radius = 32.0
-height = 894.0
 [sub_resource type="CurveTexture" id="CurveTexture_1ioa8"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_srnk1"]
@@ -205,6 +202,10 @@ frame_11/texture = ExtResource("37_il2mk")
 frame_11/duration = 1.0
 frame_12/texture = ExtResource("38_elsdb")
 frame_12/duration = 1.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xunt3"]
+radius = 32.0
+height = 894.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ip0ob"]
 atlas = ExtResource("37_bsvkk")
@@ -726,7 +727,7 @@ randomness = 0.5
 
 [node name="LadderLadNode#Area2D2" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderLad/LadderLadNode#Area2D2"]
+[node name="LadderLad_LadderLadNode#Area2D2#CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3017, -8304)
 shape = SubResource("CapsuleShape2D_xunt3")
 
@@ -768,5 +769,4 @@ position = Vector2(6273, -9351)
 shape = SubResource("RectangleShape2D_e80cv")
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
-[connection signal="body_entered" from="LadderLad/LadderLadNode#Area2D2" to="Player" method="_farmer_speech"]
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D2" to="AnimatedSprite2D" method="_on_area_2d_2_body_entered"]
