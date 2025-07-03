@@ -15,11 +15,11 @@ func _ready() -> void:
 	beats = 0;
 	direction = true;
 	if (currentDialogue[0][0]):
-		$PlayerSpeechContainer.hidden = false;
-		$NPCSpeechContainer.hidden = true;
+		$PlayerSpeechContainer.visible = false;
+		$NPCSpeechContainer.visible = true;
 	else:
-		$PlayerSpeechContainer.hidden = true;
-		$NPCSpeechContainer.hidden = false;
+		$PlayerSpeechContainer.visible = true;
+		$NPCSpeechContainer.visible = false;
 	pass # Replace with function body.
 
 
@@ -38,9 +38,25 @@ func _on_heartbeat() -> void:
 			direction = !direction;
 			beats = 0;
 			line += 1;
-		if (currentDialogue[0][0]):
-			$PlayerSpeechContainer.hidden = false;
-			$NPCSpeechContainer.hidden = true;
+			if (line >= len(currentDialogue)):
+				GAME.postDialogueCallback.call();
+				return
+		if (currentDialogue[line][0]):
+			$PlayerSpeechContainer.visible = false;
+			$NPCSpeechContainer.visible = true;
 		else:
-			$PlayerSpeechContainer.hidden = true;
-			$NPCSpeechContainer.hidden = false;
+			$PlayerSpeechContainer.visible = true;
+			$NPCSpeechContainer.visible = false;
+	if (direction):
+		if (currentDialogue[line][0]):
+			NPCSpeech.text = currentDialogue[line][1].substr(0, beats)
+		else:
+			PlayerSpeech.text = currentDialogue[line][1].substr(0, beats)
+		pass
+	else:
+		if (currentDialogue[line][0]):
+			NPCSpeech.text = currentDialogue[line][1].substr(beats,-1)
+		else:
+			PlayerSpeech.text = currentDialogue[line][1].substr(beats, -1)
+		pass
+	print(NPCSpeech.text)
