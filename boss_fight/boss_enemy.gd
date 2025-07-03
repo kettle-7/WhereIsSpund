@@ -2,9 +2,10 @@ extends CharacterBody2D
 @onready var player: CharacterBody2D = $"../Player"
 const BOSS_BULLET = preload("res://boss_fight/boss_bullet.tscn")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-var health = 20
+var health = 30
 @onready var timer: Timer = $Timer
 @onready var timer_2: Timer = $Timer2
+@onready var progress_bar: ProgressBar = $ProgressBar
 
 
 
@@ -20,7 +21,7 @@ func _process(delta: float) -> void:
 		animated_sprite_2d.flip_h = false
 	else:
 		animated_sprite_2d.flip_h = true
-	
+	progress_bar.value = health
 	
 	move_and_slide()
 
