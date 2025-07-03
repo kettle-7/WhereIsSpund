@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt0886ex7twqn"
-path="res://.godot/imported/BossDeathFinalSpriteSheet.png-c2e514848ef0b9354dbc3537533a065b.ctex"
+uid="uid://ditw7vwqxolyv"
+path="res://.godot/imported/dashupgrade.png-1c03a142571cf878f8dcf3f9f5d8d98c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites_and_animations/BossDeathFinalSpriteSheet.png"
-dest_files=["res://.godot/imported/BossDeathFinalSpriteSheet.png-c2e514848ef0b9354dbc3537533a065b.ctex"]
+source_file="res://common/map_elements/dashupgrade.png"
+dest_files=["res://.godot/imported/dashupgrade.png-1c03a142571cf878f8dcf3f9f5d8d98c.ctex"]
 
 [params]
 

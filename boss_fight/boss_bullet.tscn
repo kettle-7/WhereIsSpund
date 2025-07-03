@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://1ohov8rw3oq1"]
+
+[ext_resource type="Script" path="res://boss_fight/boss_bullet.gd" id="1_3kgpb"]
+[ext_resource type="Texture2D" uid="uid://0ubyx12ewph" path="res://common/entities/enemy bullet.png" id="1_vtjco"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_muc71"]
+radius = 3.49285
+
+[node name="Boss bullet" type="Node2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_3kgpb")
+
+[node name="EnemyBullet" type="Sprite2D" parent="."]
+texture = ExtResource("1_vtjco")
+
+[node name="hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+shape = SubResource("CircleShape2D_muc71")
+debug_color = Color(0.985421, 0.118556, 0, 0.42)

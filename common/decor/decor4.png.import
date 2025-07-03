@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt0886ex7twqn"
-path="res://.godot/imported/BossDeathFinalSpriteSheet.png-c2e514848ef0b9354dbc3537533a065b.ctex"
+uid="uid://dl2yd0m8d7ku8"
+path="res://.godot/imported/decor4.png-2a38273122f3fb6363cb3bd60d7ad5f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites_and_animations/BossDeathFinalSpriteSheet.png"
-dest_files=["res://.godot/imported/BossDeathFinalSpriteSheet.png-c2e514848ef0b9354dbc3537533a065b.ctex"]
+source_file="res://common/decor/decor4.png"
+dest_files=["res://.godot/imported/decor4.png-2a38273122f3fb6363cb3bd60d7ad5f7.ctex"]
 
 [params]
 
