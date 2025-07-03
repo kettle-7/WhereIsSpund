@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt0886ex7twqn"
-path="res://.godot/imported/BossDeathFinalSpriteSheet.png-c2e514848ef0b9354dbc3537533a065b.ctex"
+uid="uid://secum4i2x4xs"
+path="res://.godot/imported/jump upgrade.png-5e4f0bfb7546d2f391dcdc493e11657b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites_and_animations/BossDeathFinalSpriteSheet.png"
-dest_files=["res://.godot/imported/BossDeathFinalSpriteSheet.png-c2e514848ef0b9354dbc3537533a065b.ctex"]
+source_file="res://common/map_elements/jump upgrade.png"
+dest_files=["res://.godot/imported/jump upgrade.png-5e4f0bfb7546d2f391dcdc493e11657b.ctex"]
 
 [params]
 

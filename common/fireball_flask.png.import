@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt0886ex7twqn"
-path="res://.godot/imported/BossDeathFinalSpriteSheet.png-c2e514848ef0b9354dbc3537533a065b.ctex"
+uid="uid://c1ojxyry4hbtn"
+path="res://.godot/imported/fireball_flask.png-34feb373fb3298369d2b03026caeeb72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites_and_animations/BossDeathFinalSpriteSheet.png"
-dest_files=["res://.godot/imported/BossDeathFinalSpriteSheet.png-c2e514848ef0b9354dbc3537533a065b.ctex"]
+source_file="res://common/fireball_flask.png"
+dest_files=["res://.godot/imported/fireball_flask.png-34feb373fb3298369d2b03026caeeb72.ctex"]
 
 [params]
 

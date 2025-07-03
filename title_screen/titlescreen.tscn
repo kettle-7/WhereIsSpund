@@ -1,8 +1,14 @@
 [gd_scene load_steps=11 format=3 uid="uid://b125wiwn8732q"]
 
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://dloxder4wgam1" path="res://title.png" id="1_dlqdl"]
 [ext_resource type="Script" uid="uid://ccltixgl88u2h" path="res://title_screen/titlescreen.gd" id="2_0rhj2"]
 [ext_resource type="Script" uid="uid://c0nlsu0wvenun" path="res://quit_button.gd" id="3_25ark"]
+=======
+[ext_resource type="Texture2D" uid="uid://dloxder4wgam1" path="res://title_screen/title.png" id="1_dlqdl"]
+[ext_resource type="Script" path="res://title_screen/titlescreen.gd" id="2_0rhj2"]
+[ext_resource type="Script" path="res://ui/quit_button.gd" id="3_25ark"]
+>>>>>>> 7a5f3afb8777f6424cdafb377de7a57d9021516a
 
 [sub_resource type="SystemFont" id="SystemFont_1o75w"]
 font_names = PackedStringArray("Bernard MT")
@@ -132,7 +138,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "play"
+text = "Play"
 script = ExtResource("2_0rhj2")
 
 [node name="QuitButton" type="Button" parent="GridContainer2"]
