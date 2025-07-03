@@ -249,3 +249,13 @@ func _on_cyote_jump_timer_timeout() -> void:
 
 func _on_shooting_cooldown_timeout() -> void:
 	canshoot = true
+
+
+func _farmer_speech(area: Area2D) -> void:
+	if ("ladder" in GAME.seenNPCs):
+		return;
+	GAME.seenNPCs.append("ladder");
+	GAME.requestedDialogue = GAME.gameDialogues["ladder"];
+	GAME.NPCRequest = "farmer";
+	get_tree().change_scene_to_file("res://dialogues/dialogue.tscn");
+	pass # Replace with function body.
