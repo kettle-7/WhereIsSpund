@@ -13,6 +13,16 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.name == "player_area":
+	print("onarea")
+	if area.get_name() == "player_area":
+		print('inplayer')
+		GAME.jumpupgrade = true
+		queue_free()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("onbody")
+	if body.get_name() == "Player":
+		print('inplayer')
 		GAME.jumpupgrade = true
 		queue_free()
