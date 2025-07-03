@@ -56,7 +56,7 @@ func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_
 		GAME.spawnx = area.global_position.x
 		GAME.spawny = area.global_position.y - 10
 	# handle spike collisions
-	if str(area.get_name()) == "spikes" or GAME.playerhealth < 1:
+	if str(area.get_name()) == "spikes" or GAME.playerhealth < 10:
 		
 		GAME.playerhealth = 100
 		get_tree().reload_current_scene()
@@ -72,6 +72,12 @@ func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_
 		GAME.playerhealth -= randi_range(15,25)
 
 func _physics_process(delta):
+	
+	
+	if GAME.playerhealth < 10:
+		GAME.playerhealth = 100
+		get_tree().reload_current_scene()
+	
 	if GAME.jumpupgrade:
 		JUMP_VELOCITY = -160
 	else:
