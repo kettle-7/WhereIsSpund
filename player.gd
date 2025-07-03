@@ -84,9 +84,9 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("dash") and candash and GAME.dashupgrade:
 		candash = false
 		if Input.is_action_pressed("left"):
-			acceleration += -SPEED * 15
+			acceleration += -SPEED * 25
 		if Input.is_action_pressed("right"):
-			acceleration += SPEED * 15
+			acceleration += SPEED * 25
 	
 	if grabbedid != null:
 		grabpos = grabbedid.global_position
