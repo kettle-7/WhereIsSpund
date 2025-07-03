@@ -6,5 +6,10 @@ var spawny = 70
 var jumpupgrade = true
 var walljumpupgrade = true
 var dashupgrade = true
-var requestedDialogue = [[0, "eeeeeeeeeeeeeeeeeeeeeee"], [1, "üüüüüüüüüüüüüüüüüüüüüüüüüüüüüüüüüüüüü\nüüüüüüüüüüüü"]];
-var postDialogueCallback = func(): get_tree().change_scene_to_file("res://main.tscn")
+var seenNPCs = []
+var requestedDialogue = [];
+var postDialogueCallback = func(): get_tree().change_scene_to_file("res://common/scenes/main.tscn")
+var NPCRequest = "";
+var gameDialogues = {
+	"ladder": [[0, "i'm the main character"],[1, "waaaaaaaaaaaaaaa :<"]]
+}

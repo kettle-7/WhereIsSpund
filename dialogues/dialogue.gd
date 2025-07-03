@@ -12,6 +12,12 @@ var direction = true;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	currentDialogue = GAME.requestedDialogue;
+	if (GAME.NPCRequest == "farmer"):
+		$Farmer.visible = true;
+	elif (GAME.NPCRequest == "wizard"):
+		$Wizard.visible = true;
+	elif (GAME.NPCRequest == "climber"):
+		$Climber.visible = true;
 	line = 0;
 	beats = 0;
 	direction = true;
