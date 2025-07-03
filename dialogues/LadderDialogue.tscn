@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bovx4wbvk8g0j"]
+[gd_scene load_steps=15 format=3 uid="uid://bovx4wbvk8g0j"]
 
+[ext_resource type="Script" path="res://dialogues/dialogue.gd" id="1_nbsky"]
 [ext_resource type="Texture2D" uid="uid://du6gvsf010jun" path="res://dialogues/Village1.png" id="1_wlb1g"]
-[ext_resource type="Texture2D" uid="uid://cvke7soxlw4x3" path="res://sprites_and_animations/WizardSpriteSheetFinal.png" id="2_bs6fl"]
-[ext_resource type="Texture2D" uid="uid://cgo8rpq8xrg4b" path="res://Sprite-0000.png" id="3_cgiq0"]
+[ext_resource type="Texture2D" uid="uid://bd3ca4po2rudk" path="res://sprites_and_animations/WizardSpriteSheetFinal.png" id="2_bs6fl"]
+[ext_resource type="Texture2D" uid="uid://rmhn52yfi1nb" path="res://Sprite-0000.png" id="3_cgiq0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_up5hk"]
 atlas = ExtResource("2_bs6fl")
@@ -77,6 +78,7 @@ animations = [{
 }]
 
 [node name="LadderDialogue" type="Node2D"]
+script = ExtResource("1_nbsky")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
@@ -86,53 +88,65 @@ texture = ExtResource("1_wlb1g")
 position = Vector2(178, 526)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_3swr7")
-frame_progress = 0.0662513
+frame_progress = 0.661229
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(574, 569)
 rotation = -3.14159
 scale = Vector2(5.775, 5)
 sprite_frames = SubResource("SpriteFrames_mleio")
-frame_progress = 0.866369
+frame_progress = 0.461394
 
-[node name="PlayerSpeech" type="PanelContainer" parent="."]
-offset_left = 385.0
-offset_top = 485.0
-offset_right = 528.0
-offset_bottom = 525.0
+[node name="PlayerSpeechContainer" type="CenterContainer" parent="."]
+offset_left = 622.0
+offset_top = 496.0
+offset_right = 647.0
+offset_bottom = 531.0
 
-[node name="ColorRect" type="ColorRect" parent="PlayerSpeech"]
+[node name="P" type="PanelContainer" parent="PlayerSpeechContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="PlayerSpeechContainer/P"]
 layout_mode = 2
 color = Color(0.172549, 0.172549, 0.172549, 0.803922)
 
-[node name="MarginContainer" type="MarginContainer" parent="PlayerSpeech"]
+[node name="MarginContainer" type="MarginContainer" parent="PlayerSpeechContainer/P"]
 layout_mode = 2
 theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 6
 
-[node name="OtherNPCText" type="Label" parent="PlayerSpeech/MarginContainer"]
+[node name="PlayerSpeech" type="Label" parent="PlayerSpeechContainer/P/MarginContainer"]
 layout_mode = 2
-text = "General Kenobi"
 
-[node name="NPCSpeech" type="PanelContainer" parent="."]
-offset_left = 258.0
-offset_top = 442.0
-offset_right = 344.0
-offset_bottom = 482.0
+[node name="NPCSpeechContainer" type="CenterContainer" parent="."]
+offset_left = 248.0
+offset_top = 451.0
+offset_right = 272.0
+offset_bottom = 486.0
 
-[node name="ColorRect" type="ColorRect" parent="NPCSpeech"]
+[node name="P" type="PanelContainer" parent="NPCSpeechContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="NPCSpeechContainer/P"]
 layout_mode = 2
 color = Color(0.172549, 0.172549, 0.172549, 0.803922)
 
-[node name="MarginContainer" type="MarginContainer" parent="NPCSpeech"]
+[node name="MarginContainer" type="MarginContainer" parent="NPCSpeechContainer/P"]
 layout_mode = 2
 theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 6
 
-[node name="OtherNPCText" type="Label" parent="NPCSpeech/MarginContainer"]
+[node name="NPCSpeech" type="Label" parent="NPCSpeechContainer/P/MarginContainer"]
 layout_mode = 2
-text = "Hello there"
+text = "Hello  hjghjghjgh"
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="DialogueHeartbeat" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.125
+autostart = true
+
+[connection signal="timeout" from="DialogueHeartbeat" to="." method="_on_heartbeat"]
