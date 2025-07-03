@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://yguq3apeqsn4"]
+[gd_scene load_steps=70 format=4 uid="uid://yguq3apeqsn4"]
 
 [ext_resource type="PackedScene" uid="uid://ux3n5puh5ctw" path="res://common/scenes/player.tscn" id="1_c37tn"]
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://common/map_elements/tileset01.png" id="1_yg34a"]
@@ -34,11 +34,23 @@
 [ext_resource type="Texture2D" uid="uid://dj6pjugquxtnc" path="res://common/decor/bottomcloud.png" id="32_ce0kv"]
 [ext_resource type="Texture2D" uid="uid://hgpfpg0grolx" path="res://sprites_and_animations/FarmerFinalFinalSpriteSheet.png" id="32_qjk7l"]
 [ext_resource type="Texture2D" uid="uid://dwbli2xeihrw7" path="res://common/decor/toutorial.png" id="33_omhkk"]
+[ext_resource type="Texture2D" uid="uid://bjr78o4o47hji" path="res://common/decor/cloud0.png" id="34_e4ooa"]
 [ext_resource type="Script" path="res://common/scenes/toutorial.gd" id="34_vlgmg"]
+[ext_resource type="Texture2D" uid="uid://dhc70xu8yi6d" path="res://common/decor/cloud1a.png" id="35_73o3s"]
 [ext_resource type="Texture2D" uid="uid://ird3gaettgt0" path="res://common/map_elements/ladder.png" id="35_dej4d"]
+[ext_resource type="Texture2D" uid="uid://pa75raebcids" path="res://common/decor/cloud10.png" id="36_83mwq"]
 [ext_resource type="Texture2D" uid="uid://4anmaybvt0ks" path="res://boss_fight/BossIdle.png" id="37_bsvkk"]
+[ext_resource type="Texture2D" uid="uid://qoak40hhlp0m" path="res://common/decor/cloud11.png" id="37_il2mk"]
+[ext_resource type="Texture2D" uid="uid://dybgopieovc0m" path="res://common/decor/cloud12.png" id="38_elsdb"]
 [ext_resource type="Script" path="res://common/scenes/bossstart.gd" id="38_ia6d6"]
-[ext_resource type="Texture2D" uid="uid://b6m1hg3ark0iq" path="res://common/map_elements/dash youtorial.png" id="39_5jcta"]
+[ext_resource type="Texture2D" uid="uid://bicvvanbxdowy" path="res://common/decor/cloud2a.png" id="39_fcn8n"]
+[ext_resource type="Texture2D" uid="uid://4u08bkp228te" path="res://common/decor/cloud3a.png" id="40_27wtm"]
+[ext_resource type="Texture2D" uid="uid://dckrmnqdwhcgk" path="res://common/decor/cloud4.png" id="41_brmaf"]
+[ext_resource type="Texture2D" uid="uid://bl57ygq88802n" path="res://common/decor/cloud5.png" id="42_ivbo4"]
+[ext_resource type="Texture2D" uid="uid://b33qfyynskrh1" path="res://common/decor/cloud6.png" id="43_7c0tq"]
+[ext_resource type="Texture2D" uid="uid://etiyx3dvsjdr" path="res://common/decor/cloud7.png" id="44_7fveh"]
+[ext_resource type="Texture2D" uid="uid://c7plwp5f7d5pn" path="res://common/decor/cloud8.png" id="45_iwe2c"]
+[ext_resource type="Texture2D" uid="uid://p7e3wipxb707" path="res://common/decor/cloud9.png" id="46_7qe65"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jm6f0"]
 texture = ExtResource("1_yg34a")
@@ -151,6 +163,49 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="CurveTexture" id="CurveTexture_1ioa8"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_srnk1"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(200, 25, 1)
+gravity = Vector3(-250, 0, 0)
+scale_max = 2.0
+alpha_curve = SubResource("CurveTexture_1ioa8")
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_61ds8"]
+frames = 13
+pause = true
+frame_0/texture = ExtResource("34_e4ooa")
+frame_1/texture = ExtResource("35_73o3s")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("39_fcn8n")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("40_27wtm")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("41_brmaf")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("42_ivbo4")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("43_7c0tq")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("44_7fveh")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("45_iwe2c")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("46_7qe65")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("36_83mwq")
+frame_10/duration = 1.0
+frame_11/texture = ExtResource("37_il2mk")
+frame_11/duration = 1.0
+frame_12/texture = ExtResource("38_elsdb")
+frame_12/duration = 1.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xunt3"]
+radius = 32.0
+height = 894.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ip0ob"]
 atlas = ExtResource("37_bsvkk")
@@ -704,12 +759,24 @@ scale = Vector2(0.0725, 0.0725)
 sprite_frames = SubResource("SpriteFrames_1ngat")
 frame_progress = 0.330608
 
-[node name="LadderLadNode#Area2D2" type="Area2D" parent="LadderLad"]
-position = Vector2(-41696.6, 113200)
-scale = Vector2(13.7931, 13.7931)
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(12653, 39.0002)
+scale = Vector2(0.0725, 0.0725)
+amount = 25
+process_material = SubResource("ParticleProcessMaterial_srnk1")
+texture = SubResource("AnimatedTexture_61ds8")
+lifetime = 25.0
+randomness = 0.5
+
+[node name="LadderLadNode#Area2D2" type="Area2D" parent="."]
+
+[node name="LadderLad_LadderLadNode#Area2D2#CollisionShape2D" type="CollisionShape2D" parent="LadderLadNode#Area2D2"]
+position = Vector2(3017, -8304)
+shape = SubResource("CapsuleShape2D_xunt3")
 
 [node name="Toutorial" type="Sprite2D" parent="."]
-position = Vector2(348, 16)
+position = Vector2(109, -161)
 scale = Vector2(5, 5)
 texture = ExtResource("33_omhkk")
 script = ExtResource("34_vlgmg")
@@ -746,12 +813,8 @@ position = Vector2(6273, -9351)
 shape = SubResource("RectangleShape2D_e80cv")
 
 [node name="Higher Jump upgrade" parent="." instance=ExtResource("14_c4adx")]
-position = Vector2(-1761, 10)
-
-[node name="DashYoutorial" type="Sprite2D" parent="."]
-position = Vector2(5635, -2497)
-scale = Vector2(5, 5)
-texture = ExtResource("39_5jcta")
+position = Vector2(-1786, 22)
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="area_entered" from="LadderLadNode#Area2D2" to="Player" method="_farmer_speech"]
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D2" to="AnimatedSprite2D" method="_on_area_2d_2_body_entered"]
