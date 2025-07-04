@@ -847,6 +847,66 @@ position = Vector2(-182, -706)
 scale = Vector2(5, 5)
 texture = ExtResource("54_q7nww")
 
+[node name="fluffycloud" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(3414, -9542)
+texture = ExtResource("42_ivbo4")
+
+[node name="fluffycloud2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(-2215, -10431)
+texture = ExtResource("36_83mwq")
+
+[node name="fluffycloud3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(3222, -5353)
+texture = ExtResource("40_27wtm")
+
+[node name="fluffycloud4" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(-434, -6525)
+texture = ExtResource("41_brmaf")
+
+[node name="fluffycloud5" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(-1390, -2089)
+texture = ExtResource("38_elsdb")
+
+[node name="fluffycloud6" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(2534, -463)
+texture = ExtResource("39_fcn8n")
+
+[node name="fluffycloud7" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(1823, -3522)
+texture = ExtResource("34_e4ooa")
+
+[node name="fluffycloud9" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(-2791, -3604)
+texture = ExtResource("36_83mwq")
+
+[node name="fluffycloud10" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(4816, -3322)
+texture = ExtResource("39_fcn8n")
+
+[node name="fluffycloud8" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(-392, -2257)
+texture = ExtResource("44_7fveh")
+
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
 [connection signal="area_entered" from="LadderLadNode#Area2D2" to="Player" method="_farmer_speech"]
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D2" to="AnimatedSprite2D" method="_on_area_2d_2_body_entered"]
