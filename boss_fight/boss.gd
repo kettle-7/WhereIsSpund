@@ -3,8 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GAME.spawnx = 98
-	GAME.spawny = 70
+	pass
 
 
 
