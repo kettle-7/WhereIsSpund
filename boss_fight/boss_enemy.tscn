@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=4 uid="uid://d0jj7o8rue7yp"]
 
 [ext_resource type="Script" path="res://boss_fight/boss_enemy.gd" id="1_qfa8f"]
-[ext_resource type="Texture2D" uid="uid://j0vclbm34531" path="res://sprites_and_animations/EvilVillianSpriteSheet.png" id="2_vg2in"]
+[ext_resource type="Texture2D" uid="uid://daxxq5kyonvyh" path="res://sprites_and_animations/EvilVillianSpriteSheet.png" id="2_vg2in"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_12sf2"]
 radius = 633.412

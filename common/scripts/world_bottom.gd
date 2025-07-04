@@ -13,5 +13,5 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	GAME.playerhealth = 100
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://sprites_and_animations/deathscene.tscn")
 	pass # Replace with function body.
