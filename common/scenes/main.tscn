@@ -410,7 +410,7 @@ position = Vector2(1036, -1278)
 position = Vector2(2536, -2650)
 
 [node name="Checkpoint3" parent="." instance=ExtResource("19_aak4y")]
-position = Vector2(-1671, -956)
+position = Vector2(-1671, -966)
 
 [node name="Checkpoint4" parent="." instance=ExtResource("19_aak4y")]
 position = Vector2(-2606, -2724)
