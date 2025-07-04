@@ -58,7 +58,7 @@ func _on_pa_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_
 		GAME.spawnx = area.global_position.x
 		GAME.spawny = area.global_position.y - 10
 	# handle spike collisions
-	if str(area.get_name()) == "spikes" or GAME.playerhealth < 10:
+	if str(area.get_name()) == "spikes":
 		if GAME.walljumpupgrade:
 			animatedsprite.play("death_backpack_boots")
 		elif GAME.jumpupgrade:
@@ -89,6 +89,8 @@ func _physics_process(delta):
 			animatedsprite.play("death_boots")
 		else:
 			animatedsprite.play("death")
+		
+		await get_tree().create_timer(0.9375).timeout
 		GAME.playerhealth = 100
 		get_tree().reload_current_scene()
 	
@@ -273,4 +275,8 @@ func _farmer_speech(area: Area2D) -> void:
 	GAME.spawnx = global_position.x;
 	GAME.spawny = global_position.y;
 	get_tree().change_scene_to_file("res://dialogues/dialogue.tscn");
+	pass # Replace with function body.
+
+
+func _on_animated_sprite_2d_animation_finished(anim) -> void:
 	pass # Replace with function body.
