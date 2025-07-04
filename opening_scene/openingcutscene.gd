@@ -11,22 +11,11 @@ var stage = 0;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hayzeGifs.visible = false;
-	camera.set_zoom(Vector2(5, 5))
-	camera.move_local_x(-300);
-	camera.move_local_y(-30);
-	pass # Replace with function body.
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if (stage > 4): return;
-	elif (stage == 1 || stage == 2):
-		camera.set_zoom(camera.get_zoom() / Vector2(1.005, 1.005))
-		camera.move_local_x(1);
-		camera.move_local_y(0.1);
-	elif (stage == 3 || stage == 4):
-		townChunk.move_local_y(-2.5);
-	pass
+
 
 
 func _on_stage_timer_timeout() -> void:
