@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=4 uid="uid://yguq3apeqsn4"]
+[gd_scene load_steps=73 format=4 uid="uid://yguq3apeqsn4"]
 
 [ext_resource type="PackedScene" uid="uid://ux3n5puh5ctw" path="res://common/scenes/player.tscn" id="1_c37tn"]
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://common/map_elements/tileset01.png" id="1_yg34a"]
@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://cec1mew7r2v8c" path="res://common/scenes/checkpoint.tscn" id="19_aak4y"]
 [ext_resource type="PackedScene" uid="uid://dj0yfuchs0etl" path="res://common/scenes/dashupgrade.tscn" id="19_pes66"]
 [ext_resource type="PackedScene" uid="uid://cyfjwvpl4nxmh" path="res://common/scenes/walljumpupgrade.tscn" id="21_4jing"]
-[ext_resource type="Texture2D" uid="uid://b1is45pvkanss" path="res://common/decor/decor1.png" id="22_rumfd"]
 [ext_resource type="Texture2D" uid="uid://dd43sok4cwp8r" path="res://common/decor/decor2.png" id="23_qmqfc"]
 [ext_resource type="Texture2D" uid="uid://dl2yd0m8d7ku8" path="res://common/decor/decor4.png" id="24_1kno1"]
 [ext_resource type="Texture2D" uid="uid://crviy3wu74g7j" path="res://common/decor/decor3.png" id="25_ovody"]
@@ -51,6 +50,10 @@
 [ext_resource type="Texture2D" uid="uid://etiyx3dvsjdr" path="res://common/decor/cloud7.png" id="44_7fveh"]
 [ext_resource type="Texture2D" uid="uid://c7plwp5f7d5pn" path="res://common/decor/cloud8.png" id="45_iwe2c"]
 [ext_resource type="Texture2D" uid="uid://p7e3wipxb707" path="res://common/decor/cloud9.png" id="46_7qe65"]
+[ext_resource type="Texture2D" uid="uid://cxfh4us5t4rqn" path="res://common/map_elements/house(1)1.png" id="51_5svx5"]
+[ext_resource type="Texture2D" uid="uid://d816wnsk3ido" path="res://common/map_elements/house(1)2.png" id="52_okwwq"]
+[ext_resource type="Texture2D" uid="uid://d2i8i6uwr155d" path="res://common/map_elements/house(1)3.png" id="53_nmgp8"]
+[ext_resource type="Texture2D" uid="uid://7g44s07fyxvt" path="res://common/map_elements/house(1)4.png" id="54_q7nww"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jm6f0"]
 texture = ExtResource("1_yg34a")
@@ -419,10 +422,6 @@ position = Vector2(3169, -4409)
 
 [node name="Checkpoint7" parent="." instance=ExtResource("19_aak4y")]
 position = Vector2(-1512, -9844)
-
-[node name="Decor1" type="Sprite2D" parent="."]
-position = Vector2(411, 371)
-texture = ExtResource("22_rumfd")
 
 [node name="Decor2" type="Sprite2D" parent="."]
 position = Vector2(707, 163)
@@ -815,6 +814,36 @@ shape = SubResource("RectangleShape2D_e80cv")
 
 [node name="Higher Jump upgrade" parent="." instance=ExtResource("14_c4adx")]
 position = Vector2(-1786, 22)
+
+[node name="House(1)1" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(3263, -8147)
+scale = Vector2(5, 5)
+texture = ExtResource("51_5svx5")
+
+[node name="House(1)2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(2878, -8148)
+scale = Vector2(5, 5)
+texture = ExtResource("52_okwwq")
+
+[node name="House(1)3" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(2995, -8147)
+scale = Vector2(5, 5)
+texture = ExtResource("53_nmgp8")
+
+[node name="House(1)4" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(184, 177)
+scale = Vector2(5, 5)
+texture = ExtResource("52_okwwq")
+
+[node name="House(1)5" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-182, -706)
+scale = Vector2(5, 5)
+texture = ExtResource("54_q7nww")
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
 [connection signal="area_entered" from="LadderLadNode#Area2D2" to="Player" method="_farmer_speech"]

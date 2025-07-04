@@ -199,7 +199,7 @@ position = Vector2(558, 327)
 scale = Vector2(6.495, 6.495)
 sprite_frames = SubResource("SpriteFrames_rhdjk")
 autoplay = "default"
-frame_progress = 0.943791
+frame_progress = 0.426168
 
 [node name="Man-scream-08-352438" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_e0yg7")
