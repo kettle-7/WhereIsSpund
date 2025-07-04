@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://ugjl7wp3joe7"]
 
-[ext_resource type="Texture2D" uid="uid://bhsq68n68pt6m" path="res://sprites_and_animations/ActualBossDeathSpriteSheet.png" id="1_e7g3k"]
+[ext_resource type="Texture2D" uid="uid://b1u3kn3e5gt1o" path="res://sprites_and_animations/ActualBossDeathSpriteSheet.png" id="1_e7g3k"]
 [ext_resource type="AudioStream" uid="uid://ckggus5hc6d14" path="res://boss_fight/Random 13.wav" id="2_wx5et"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hioob"]
