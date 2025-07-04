@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://cfvopkimiwlr1"]
+[gd_scene load_steps=30 format=3 uid="uid://cfvopkimiwlr1"]
 
 [ext_resource type="Script" path="res://death_cutscene.gd" id="1_at2y0"]
-[ext_resource type="Texture2D" uid="uid://d0msqtwchgyhf" path="res://sprites_and_animations/BackgroundforFallingAnimation.png" id="2_010rs"]
+[ext_resource type="Texture2D" uid="uid://c7y5kq07fxpve" path="res://sprites_and_animations/BackgroundforFallingAnimation.png" id="2_010rs"]
 [ext_resource type="Texture2D" uid="uid://ljh1a54o6yjx" path="res://sprites_and_animations/PlayerFallingCutsceneSprtieSheet.png" id="3_g6x8n"]
+[ext_resource type="AudioStream" uid="uid://blucsmuw8dfxa" path="res://man-scream-08-352438.mp3" id="4_e0yg7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4fjxh"]
 atlas = ExtResource("3_g6x8n")
@@ -198,6 +199,10 @@ position = Vector2(558, 327)
 scale = Vector2(6.495, 6.495)
 sprite_frames = SubResource("SpriteFrames_rhdjk")
 autoplay = "default"
-frame_progress = 0.895824
+frame_progress = 0.943791
+
+[node name="Man-scream-08-352438" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_e0yg7")
+autoplay = true
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
