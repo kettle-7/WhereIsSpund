@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cihy1ir3tk687"]
+
+[ext_resource type="Script" path="res://common/scripts/higher_jump_upgrade.gd" id="1_6fjw5"]
+[ext_resource type="Texture2D" uid="uid://secum4i2x4xs" path="res://common/map_elements/jump upgrade.png" id="2_xhf1w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c2283"]
+
+[node name="Higher Jump upgrade" type="Node2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_6fjw5")
+
+[node name="JumpUpgrade" type="Sprite2D" parent="."]
+texture = ExtResource("2_xhf1w")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 15
+collision_mask = 15
+priority = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_c2283")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

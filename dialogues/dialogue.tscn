@@ -1,0 +1,213 @@
+[gd_scene load_steps=23 format=3 uid="uid://bovx4wbvk8g0j"]
+
+[ext_resource type="Script" path="res://dialogues/dialogue.gd" id="1_y0b06"]
+[ext_resource type="Texture2D" uid="uid://du6gvsf010jun" path="res://dialogues/Village1.png" id="2_sp07m"]
+[ext_resource type="Texture2D" uid="uid://bd3ca4po2rudk" path="res://sprites_and_animations/WizardSpriteSheetFinal.png" id="3_jlvuq"]
+[ext_resource type="Texture2D" uid="uid://hgpfpg0grolx" path="res://sprites_and_animations/FarmerFinalFinalSpriteSheet.png" id="4_rm35l"]
+[ext_resource type="Texture2D" uid="uid://rmhn52yfi1nb" path="res://common/entities/Sprite-0000.png" id="4_x7uq0"]
+[ext_resource type="Texture2D" uid="uid://dbmfyfe57f2ui" path="res://sprites_and_animations/RockClimberFinalFinal.png" id="5_njplc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up5hk"]
+atlas = ExtResource("3_jlvuq")
+region = Rect2(0, 0, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ev313"]
+atlas = ExtResource("3_jlvuq")
+region = Rect2(1600, 0, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt8ew"]
+atlas = ExtResource("3_jlvuq")
+region = Rect2(3200, 0, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhasd"]
+atlas = ExtResource("3_jlvuq")
+region = Rect2(4800, 0, 1600, 1600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3swr7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up5hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ev313")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt8ew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhasd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uu4h"]
+atlas = ExtResource("4_rm35l")
+region = Rect2(0, 0, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2aje"]
+atlas = ExtResource("4_rm35l")
+region = Rect2(1600, 0, 1600, 1600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dvp6e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uu4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2aje")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jirly"]
+atlas = ExtResource("5_njplc")
+region = Rect2(0, 0, 1600, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71yjb"]
+atlas = ExtResource("5_njplc")
+region = Rect2(1600, 0, 1600, 1600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gai4y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jirly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71yjb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4ktr"]
+atlas = ExtResource("4_x7uq0")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eh3sn"]
+atlas = ExtResource("4_x7uq0")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1kk0"]
+atlas = ExtResource("4_x7uq0")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhh1q"]
+atlas = ExtResource("4_x7uq0")
+region = Rect2(60, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mleio"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4ktr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eh3sn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1kk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhh1q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LadderDialogue" type="Node2D"]
+script = ExtResource("1_y0b06")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_sp07m")
+
+[node name="Wizard" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(178, 526)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_3swr7")
+frame_progress = 0.661229
+
+[node name="Farmer" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(198, 526)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_dvp6e")
+frame_progress = 0.11191
+
+[node name="Climber" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(193, 526)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_gai4y")
+frame_progress = 0.811959
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(574, 569)
+rotation = -3.14159
+scale = Vector2(5.775, 5)
+sprite_frames = SubResource("SpriteFrames_mleio")
+frame_progress = 0.461394
+
+[node name="PlayerSpeechContainer" type="CenterContainer" parent="."]
+offset_left = 622.0
+offset_top = 496.0
+offset_right = 647.0
+offset_bottom = 531.0
+
+[node name="P" type="PanelContainer" parent="PlayerSpeechContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="PlayerSpeechContainer/P"]
+layout_mode = 2
+color = Color(0.172549, 0.172549, 0.172549, 0.803922)
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerSpeechContainer/P"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 6
+
+[node name="PlayerSpeech" type="Label" parent="PlayerSpeechContainer/P/MarginContainer"]
+layout_mode = 2
+
+[node name="NPCSpeechContainer" type="CenterContainer" parent="."]
+offset_left = 248.0
+offset_top = 451.0
+offset_right = 272.0
+offset_bottom = 486.0
+
+[node name="P" type="PanelContainer" parent="NPCSpeechContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="NPCSpeechContainer/P"]
+layout_mode = 2
+color = Color(0.172549, 0.172549, 0.172549, 0.803922)
+
+[node name="MarginContainer" type="MarginContainer" parent="NPCSpeechContainer/P"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 6
+
+[node name="NPCSpeech" type="Label" parent="NPCSpeechContainer/P/MarginContainer"]
+layout_mode = 2
+text = "Hello  hjghjghjgh"
+
+[node name="DialogueHeartbeat" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.06
+autostart = true
+
+[connection signal="timeout" from="DialogueHeartbeat" to="." method="_on_heartbeat"]

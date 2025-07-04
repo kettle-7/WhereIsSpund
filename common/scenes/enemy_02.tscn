@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://b83e8a0mlrr8"]
+
+[ext_resource type="Script" path="res://common/scripts/enemy_02.gd" id="1_bjrl7"]
+[ext_resource type="Texture2D" uid="uid://coq7esnyyt48r" path="res://common/entities/Enemy02.png" id="2_8mdog"]
+[ext_resource type="AudioStream" uid="uid://cd26op8fdw1f3" path="res://common/Hit_hurt 6 (1).wav" id="3_6cfw0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgj43"]
+atlas = ExtResource("2_8mdog")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgsnu"]
+atlas = ExtResource("2_8mdog")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_giejf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgj43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgsnu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkj5y"]
+size = Vector2(20, 20.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjrl7"]
+size = Vector2(33.1, 22.2)
+
+[node name="Enemy02" type="CharacterBody2D"]
+position = Vector2(-3, 0)
+scale = Vector2(5, 5)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_bjrl7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_giejf")
+autoplay = "default"
+frame = 1
+frame_progress = 0.670492
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10.125)
+shape = SubResource("RectangleShape2D_wkj5y")
+
+[node name="left" type="RayCast2D" parent="."]
+position = Vector2(0, -10)
+target_position = Vector2(-13, 0)
+
+[node name="right" type="RayCast2D" parent="."]
+position = Vector2(0, -10)
+target_position = Vector2(13, 0)
+
+[node name="hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(0.749999, -11)
+shape = SubResource("RectangleShape2D_bjrl7")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="HitHurt6(1)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6cfw0")
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
