@@ -167,16 +167,16 @@ animations = [{
 [sub_resource type="CurveTexture" id="CurveTexture_1ioa8"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_srnk1"]
+lifetime_randomness = 0.25
 particle_flag_disable_z = true
 emission_shape = 3
-emission_box_extents = Vector3(200, 25, 1)
+emission_box_extents = Vector3(200, 1, 1)
 gravity = Vector3(-250, 0, 0)
-scale_max = 2.0
+scale_min = 0.5
 alpha_curve = SubResource("CurveTexture_1ioa8")
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_61ds8"]
 frames = 13
-pause = true
 frame_0/texture = ExtResource("34_e4ooa")
 frame_1/texture = ExtResource("35_73o3s")
 frame_1/duration = 1.0
@@ -713,13 +713,15 @@ frame_progress = 0.330608
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 z_index = -1
-position = Vector2(12653, 39.0002)
-scale = Vector2(0.0725, 0.0725)
+position = Vector2(856, -56)
+scale = Vector2(5, 1)
 amount = 25
 process_material = SubResource("ParticleProcessMaterial_srnk1")
 texture = SubResource("AnimatedTexture_61ds8")
 lifetime = 25.0
+speed_scale = 0.5
 randomness = 0.5
+draw_order = 0
 
 [node name="LadderLadNode#Area2D2" type="Area2D" parent="."]
 
