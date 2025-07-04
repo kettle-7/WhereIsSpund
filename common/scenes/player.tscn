@@ -441,7 +441,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dubue"]
 radius = 4.0
-height = 13.293
+height = 13.6
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4wpn"]
 size = Vector2(4.209, 11.2025)
@@ -553,6 +553,8 @@ position = Vector2(-4.54747e-13, -2.21549)
 sprite_frames = SubResource("SpriteFrames_732bp")
 animation = &"death"
 autoplay = "idle"
+frame = 1
+frame_progress = 0.277271
 
 [node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D"]
 position = Vector2(-0.110775, 0)
@@ -617,6 +619,7 @@ stream = ExtResource("5_di0v6")
 stream = ExtResource("6_fdu1x")
 volume_db = 3.2
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_shape_entered" from="player_area" to="." method="_on_pa_area_shape_entered"]
 [connection signal="area_shape_exited" from="player_area" to="." method="_on_pa_area_shape_exited"]
 [connection signal="body_entered" from="bubble/poparea" to="." method="_on_poparea_body_entered"]

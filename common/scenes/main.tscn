@@ -34,14 +34,14 @@
 [ext_resource type="Texture2D" uid="uid://hgpfpg0grolx" path="res://sprites_and_animations/FarmerFinalFinalSpriteSheet.png" id="32_qjk7l"]
 [ext_resource type="Texture2D" uid="uid://dwbli2xeihrw7" path="res://common/decor/toutorial.png" id="33_omhkk"]
 [ext_resource type="Texture2D" uid="uid://bjr78o4o47hji" path="res://common/decor/cloud0.png" id="34_e4ooa"]
-[ext_resource type="Script" path="res://common/scenes/toutorial.gd" id="34_vlgmg"]
+[ext_resource type="Script" path="res://common/scripts/toutorial.gd" id="34_vlgmg"]
 [ext_resource type="Texture2D" uid="uid://dhc70xu8yi6d" path="res://common/decor/cloud1a.png" id="35_73o3s"]
 [ext_resource type="Texture2D" uid="uid://ird3gaettgt0" path="res://common/map_elements/ladder.png" id="35_dej4d"]
 [ext_resource type="Texture2D" uid="uid://pa75raebcids" path="res://common/decor/cloud10.png" id="36_83mwq"]
 [ext_resource type="Texture2D" uid="uid://4anmaybvt0ks" path="res://boss_fight/BossIdle.png" id="37_bsvkk"]
 [ext_resource type="Texture2D" uid="uid://qoak40hhlp0m" path="res://common/decor/cloud11.png" id="37_il2mk"]
 [ext_resource type="Texture2D" uid="uid://dybgopieovc0m" path="res://common/decor/cloud12.png" id="38_elsdb"]
-[ext_resource type="Script" path="res://common/scenes/bossstart.gd" id="38_ia6d6"]
+[ext_resource type="Script" path="res://common/scripts/bossstart.gd" id="38_ia6d6"]
 [ext_resource type="Texture2D" uid="uid://bicvvanbxdowy" path="res://common/decor/cloud2a.png" id="39_fcn8n"]
 [ext_resource type="Texture2D" uid="uid://4u08bkp228te" path="res://common/decor/cloud3a.png" id="40_27wtm"]
 [ext_resource type="Texture2D" uid="uid://dckrmnqdwhcgk" path="res://common/decor/cloud4.png" id="41_brmaf"]
@@ -170,10 +170,12 @@ animations = [{
 [sub_resource type="CurveTexture" id="CurveTexture_1ioa8"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_srnk1"]
+lifetime_randomness = 0.25
 particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(200, 25, 1)
 gravity = Vector3(-250, 0, 0)
+scale_min = 0.5
 scale_max = 2.0
 alpha_curve = SubResource("CurveTexture_1ioa8")
 
@@ -844,6 +846,66 @@ z_index = -1
 position = Vector2(-182, -706)
 scale = Vector2(5, 5)
 texture = ExtResource("54_q7nww")
+
+[node name="fluffycloud" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(3414, -9542)
+texture = ExtResource("42_ivbo4")
+
+[node name="fluffycloud2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(-2215, -10431)
+texture = ExtResource("36_83mwq")
+
+[node name="fluffycloud3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(3222, -5353)
+texture = ExtResource("40_27wtm")
+
+[node name="fluffycloud4" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(-434, -6525)
+texture = ExtResource("41_brmaf")
+
+[node name="fluffycloud5" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(-1390, -2089)
+texture = ExtResource("38_elsdb")
+
+[node name="fluffycloud6" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(2534, -463)
+texture = ExtResource("39_fcn8n")
+
+[node name="fluffycloud7" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(1823, -3522)
+texture = ExtResource("34_e4ooa")
+
+[node name="fluffycloud9" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(-2791, -3604)
+texture = ExtResource("36_83mwq")
+
+[node name="fluffycloud10" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(4816, -3322)
+texture = ExtResource("39_fcn8n")
+
+[node name="fluffycloud8" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+z_index = -1
+position = Vector2(-392, -2257)
+texture = ExtResource("44_7fveh")
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
 [connection signal="area_entered" from="LadderLadNode#Area2D2" to="Player" method="_farmer_speech"]
