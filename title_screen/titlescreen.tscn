@@ -132,12 +132,24 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
 text = "Play"
 script = ExtResource("2_0rhj2")
+
+[node name="PlayButton2" type="Button" parent="GridContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = " New Game "
 
 [node name="QuitButton" type="Button" parent="GridContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
 text = "Quit"
 script = ExtResource("3_25ark")
+
+[connection signal="pressed" from="GridContainer2/PlayButton2" to="GridContainer2/PlayButton" method="_on_reset_pressed"]

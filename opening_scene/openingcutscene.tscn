@@ -516,11 +516,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -31.0
+offset_left = -45.0
+offset_top = -36.0
+offset_right = -5.0
+offset_bottom = -5.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "skip"
+text = "skip (c)"
 
 [connection signal="timeout" from="StageTimer" to="." method="_on_stage_timer_timeout"]
 [connection signal="animation_looped" from="HayzeGifs/Container/Animation1" to="." method="_on_hayzeGifs_done"]

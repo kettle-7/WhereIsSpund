@@ -327,13 +327,19 @@ horizontal_alignment = 1
 
 [node name="Label5" type="Label" parent="CredittyBox"]
 layout_mode = 2
-text = "Neve Curtis - Art"
+text = "Neve Curtis - Art, Animations, Level Design"
 label_settings = SubResource("LabelSettings_wrbje")
 horizontal_alignment = 1
 
 [node name="Label6" type="Label" parent="CredittyBox"]
 layout_mode = 2
-text = "Ben Keppel - Programming, End Credits :p"
+text = "Ben Keppel - Programming, the left half of one texture, messing with git, end credits"
+label_settings = SubResource("LabelSettings_wrbje")
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="CredittyBox"]
+layout_mode = 2
+text = "theshoedemon on discord - morris easter egg"
 label_settings = SubResource("LabelSettings_wrbje")
 horizontal_alignment = 1
 
@@ -345,7 +351,7 @@ horizontal_alignment = 1
 
 [node name="Label8" type="Label" parent="CredittyBox"]
 layout_mode = 2
-text = "Thanks to Otago Polytech and CODE for sponsoring this game jam!"
+text = "Thanks to Otago Polytech and CODE for sponsoring the 2025 game jam!"
 label_settings = SubResource("LabelSettings_wrbje")
 horizontal_alignment = 1
 

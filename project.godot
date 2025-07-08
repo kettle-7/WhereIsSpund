@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="NotImperfection"
+config/name="Where is Spund?"
 run/main_scene="res://title_screen/titlescreen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://9zbc2g.jpg"
+config/icon="res://icon.png"
 config/macos_native_icon="res://9zbc2g.jpg"
 config/windows_native_icon="res://9zbc2g.jpg"
 

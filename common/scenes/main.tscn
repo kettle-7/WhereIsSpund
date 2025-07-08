@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=4 uid="uid://yguq3apeqsn4"]
+[gd_scene load_steps=78 format=4 uid="uid://yguq3apeqsn4"]
 
 [ext_resource type="PackedScene" uid="uid://ux3n5puh5ctw" path="res://common/scenes/player.tscn" id="1_c37tn"]
 [ext_resource type="Texture2D" uid="uid://tdsis7q00ven" path="res://common/map_elements/tileset01.png" id="1_yg34a"]
@@ -12,8 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://dl4jtevl4gd7r" path="res://ui/healthbar.png" id="9_hfobw"]
 [ext_resource type="Script" path="res://ui/healthbar.gd" id="10_5we2d"]
 [ext_resource type="Script" path="res://common/scripts/hurt_effect.gd" id="11_70ns4"]
+[ext_resource type="Texture2D" uid="uid://me2h0siwpbad" path="res://ui/soundnt.png" id="13_is04a"]
 [ext_resource type="PackedScene" uid="uid://cihy1ir3tk687" path="res://common/scenes/higher_jump_upgrade.tscn" id="14_c4adx"]
 [ext_resource type="Texture2D" uid="uid://d4cwlb8q2a6b0" path="res://mainbackgroundgradient.png" id="14_c5ygi"]
+[ext_resource type="Texture2D" uid="uid://b87p243onf5e0" path="res://ui/soundntpressed.png" id="14_tacif"]
+[ext_resource type="Texture2D" uid="uid://cjl250dg7pij7" path="res://ui/soundnthover.png" id="15_hlcyl"]
 [ext_resource type="Script" path="res://common/scripts/world_bottom.gd" id="15_imf8e"]
 [ext_resource type="PackedScene" uid="uid://b83e8a0mlrr8" path="res://common/scenes/enemy_02.tscn" id="16_yl3ti"]
 [ext_resource type="PackedScene" uid="uid://fknxxt5r468x" path="res://common/scenes/enemy_01.tscn" id="17_5pnoy"]
@@ -297,6 +300,21 @@ texture_normal = ExtResource("3_vpjef")
 texture_pressed = ExtResource("4_tplmv")
 texture_hover = ExtResource("5_p7mg2")
 script = ExtResource("6_nwqmp")
+
+[node name="SoundntButton" type="TextureButton" parent="StaticUI/Hurt effect"]
+z_index = 5
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -105.0
+offset_top = 29.0
+offset_right = -65.0
+offset_bottom = 69.0
+grow_horizontal = 0
+texture_normal = ExtResource("13_is04a")
+texture_pressed = ExtResource("14_tacif")
+texture_hover = ExtResource("15_hlcyl")
 
 [node name="enemies" type="Node2D" parent="."]
 
@@ -933,11 +951,12 @@ scale = Vector2(0.0510999, 0.0510999)
 texture = ExtResource("55_klwo2")
 
 [node name="Crab-removebg-preview" type="Sprite2D" parent="."]
-position = Vector2(5651, 1336)
-rotation = -3.11192
-scale = Vector2(0.2, 0.2)
+position = Vector2(5719, 1312)
+rotation = -3.59014
+scale = Vector2(4.34605, 4.34605)
 texture = ExtResource("56_v84cv")
 
+[connection signal="pressed" from="StaticUI/Hurt effect/SoundntButton" to="StaticUI/Hurt effect/PauseButton" method="_on_soundnt_button_pressed"]
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
 [connection signal="area_entered" from="LadderLadNode#Area2D2" to="Player" method="_farmer_speech"]
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D2" to="AnimatedSprite2D" method="_on_area_2d_2_body_entered"]

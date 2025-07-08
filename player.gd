@@ -28,7 +28,7 @@ var candash = false
 @onready var walljump_timer = $"walljump timer"
 @onready var animatedsprite = $AnimatedSprite2D
 
-const BULLET = preload("res://bullet.tscn")
+const BULLET = preload("res://common/scenes/bullet.tscn")
 @onready var collision_shape_2d_head = $head
 @onready var bubble = $bubble
 @onready var debuglabel = $debuglabel
@@ -101,6 +101,13 @@ func _physics_process(delta):
 	if playercanmove == true:
 		dir = Input.get_axis("left", "right")
 	
+	if (Input.is_key_pressed(KEY_E)):
+		GAME.spawnx = global_position.x;
+		GAME.spawny = global_position.y;
+	
+	if (Input.is_key_pressed(KEY_R)):
+		get_tree().reload_current_scene();
+	
 	if direction:
 		velocity.x = acceleration
 	else:
@@ -129,8 +136,6 @@ func _physics_process(delta):
 	if is_on_floor():
 		was_on_floor = true
 		cyote_jump_timer.start()
-	
-	if is_on_floor():
 		jumphold = 0
 	
 	if Input.is_action_pressed("up") and canjump == true and playercanmove == true and not inwater:
@@ -221,7 +226,8 @@ func _physics_process(delta):
 			animatedsprite.play("idle")
 	
 	# bullets
-	if Input.is_action_just_pressed("z") and canshoot:
+	print(Input.is_action_pressed("z"))
+	if Input.is_action_pressed("z") and canshoot:
 		var instance = BULLET.instantiate()
 		instance.position = Vector2(0,0)
 		shooting_cooldown.start()

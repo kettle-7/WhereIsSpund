@@ -210,4 +210,18 @@ process_callback = 0
 wait_time = 0.06
 autostart = true
 
+[node name="Button" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1108.0
+offset_top = 613.0
+offset_right = 1148.0
+offset_bottom = 644.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "skip (c)"
+
 [connection signal="timeout" from="DialogueHeartbeat" to="." method="_on_heartbeat"]

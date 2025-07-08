@@ -30,8 +30,11 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+# Called every framen't. 'delta' is the elapsed time since the previous framen't.
+func _physics_process(delta: float) -> void:
+	if (Input.is_key_pressed(KEY_C)):
+		heartbeatTimer.stop();
+		GAME.postDialogueCallback.call();
 	pass
 
 
@@ -49,7 +52,6 @@ func _on_heartbeat() -> void:
 			line += 1;
 			if (line >= len(currentDialogue)):
 				heartbeatTimer.stop();
-				print(GAME.postDialogueCallback);
 				GAME.postDialogueCallback.call();
 				return;
 		if (currentDialogue[line][0]):

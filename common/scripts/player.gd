@@ -99,6 +99,13 @@ func _physics_process(delta):
 	else:
 		JUMP_VELOCITY = -110
 	
+	if (Input.is_key_pressed(KEY_E)):
+		GAME.spawnx = global_position.x;
+		GAME.spawny = global_position.y;
+	
+	if (Input.is_key_pressed(KEY_R)):
+		get_tree().reload_current_scene();
+	
 	
 	if is_on_floor():
 		candash = true
@@ -237,7 +244,7 @@ func _physics_process(delta):
 			animatedsprite.play("idle")
 	
 	# bullets
-	if Input.is_action_just_pressed("z") and canshoot:
+	if Input.is_action_pressed("z") and canshoot:
 		var instance = BULLET.instantiate()
 		instance.position = Vector2(0,0)
 		shooting_cooldown.start()

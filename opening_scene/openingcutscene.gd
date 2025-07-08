@@ -13,9 +13,10 @@ func _ready() -> void:
 	hayzeGifs.visible = false;
 
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-
+func _physics_process(delta: float) -> void:
+	if (Input.is_key_pressed(KEY_C)):
+		_on_skip_button_pressed();
 
 
 func _on_stage_timer_timeout() -> void:
